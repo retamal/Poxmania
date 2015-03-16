@@ -15,7 +15,7 @@ public class DataBaseUsage implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		repository.save(new Producto("hola","hola","hola","hola",1,3));
+		repository.save(new Producto("adios","hola","hola","hola",1,3));
 		 // save a couple of customers
      /*   repository.save(new Producto("Jack", "Bauer"));
         repository.save(new Producto("Chloe", "O'Brian"));
