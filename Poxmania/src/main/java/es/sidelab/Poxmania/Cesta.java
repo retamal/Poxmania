@@ -1,5 +1,5 @@
 package es.sidelab.Poxmania;
-/*pruebA git, he tocado. Pues ahora toco yo*/
+/*NOTA: en application properties he añadido el puerto 6666 k es el k tengo en mi BBDD del sobremesa*/
 import java.util.ArrayList; 
 
 public class Cesta {
