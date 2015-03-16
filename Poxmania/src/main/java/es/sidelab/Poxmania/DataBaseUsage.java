@@ -10,11 +10,12 @@ import org.springframework.stereotype.Controller;
 public class DataBaseUsage implements CommandLineRunner {
 
 	@Autowired
-	private CustomerRepository repository;
+	private ProductoRepository repository;
 	
 	@Override
 	public void run(String... args) throws Exception {
 		
+		repository.save(new Producto("hola","hola","hola","hola",1,3));
 		 // save a couple of customers
      /*   repository.save(new Producto("Jack", "Bauer"));
         repository.save(new Producto("Chloe", "O'Brian"));
@@ -23,7 +24,7 @@ public class DataBaseUsage implements CommandLineRunner {
         repository.save(new Producto("Michelle", "Dessler"));
 */
         // fetch all customers
-        Iterable<Producto> productos = repository.findAll();
+     /*   Iterable<Producto> productos = repository.findAll();
         System.out.println("Customers found with findAll():");
         System.out.println("-------------------------------");
         for (Producto producto : productos) {
@@ -47,5 +48,7 @@ public class DataBaseUsage implements CommandLineRunner {
         }
         
         repository.delete(bauers.get(0));
+        
+        */
 	}
 }
