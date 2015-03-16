@@ -1,6 +1,6 @@
 package es.sidelab.Poxmania;
-/*pruebA git*/
-import java.util.ArrayList;
+/*pruebA git, he tocado*/
+import java.util.ArrayList; 
 
 public class Cesta {
 	public ArrayList<Producto> cestaCompra = new ArrayList<Producto>();
