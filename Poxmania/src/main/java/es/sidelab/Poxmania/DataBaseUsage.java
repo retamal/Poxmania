@@ -67,7 +67,7 @@ public class DataBaseUsage implements CommandLineRunner {
 	@RequestMapping("/")
 	public ModelAndView tablon() {
 
-		return new ModelAndView("tablon");
+		return new ModelAndView("index");
 	}
 	
 }

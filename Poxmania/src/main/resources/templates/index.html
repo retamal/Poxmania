@@ -1,0 +1,51 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"></link>
+<title>Poxmania</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="/css/custom.css"></link>
+</head>
+<body>
+
+<nav id="menuprincipal" class="navbar navbar-default">
+<div class="container-fluid">
+    
+    <div class="btn-group" id="pruebaprueba">
+        <!--data-toggle="dropdown" -->
+      <button type="button" class="btn btn-default dropdown-toggle" aria-expanded="false">
+        Metaheuristic Overview 
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>    
+   
+    
+    
+    
+    
+    
+</div>
+</nav>
+
+
+	<h1>Tablón de anuncios en POXMANIA</h1>
+
+	<p th:each="anuncio, it : ${anuncios}">
+		<a th:href="@{/mostrar(numAnuncio=${it.count})}"
+		   th:text="|${anuncio.nombre} ${anuncio.asunto}|">Link</a>
+	</p>
+
+	<a href="/nuevoAnuncio.html">Nuevo anuncio</a>
+
+
+</body>
+</html>
