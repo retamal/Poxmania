@@ -48,6 +48,10 @@ public class ProductoController {
 	}
 	
 	*/
+	@RequestMapping("/bienvenida")
+	public ModelAndView tablon() {
 
+		return new ModelAndView("bienvenida");
+	}
 
 }

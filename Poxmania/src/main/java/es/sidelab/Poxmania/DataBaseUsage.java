@@ -23,12 +23,43 @@ public class DataBaseUsage implements CommandLineRunner {
 
 	@Autowired
 	private ProductoRepository repository;
+	Iterable<Producto> productos;
 	
 	@Override
 	public void run(String... args) throws Exception {
+	//	String nombre, String categoria, String imagen, String descripcion, int cantidad,int precio
 		
-		repository.save(new Producto("adios","hola","hola","hola",1,3));
-		 // save a couple of customers
+		//Meto productos de prueba
+		//repository.save(new Producto("PSVita","Videoconsolas","imagen","Videoconsola portatil de Sony. Color negro.",2,199));
+		//repository.save(new Producto("Intel i7 3770k","Informatica","imagen","Procesador a 4,0 GHz.",4,380));
+		
+		
+		List<Producto>	todosLosProductos =	repository.findByCategoria("Videoconsolas");
+		//todosLosProductos
+		//Iterable<Producto> productos = repository.findAll();
+		productos = repository.findAll();
+		for (Producto producto : productos) {
+            System.out.println("Todos los productos: "+producto.getNombre());
+        }
+		for (Producto producto : todosLosProductos) {
+            System.out.println("Videoconsolas: "+producto.getNombre());
+        }
+		
+		 
+	//BORRAR COSAS DE LA BD
+	/*	System.out.println("Ahora voy a borrar el primero de todas las videoconsolas que es PSVITA");
+		repository.delete(todosLosProductos.get(0));
+		
+		for (Producto producto : todosLosProductos) {
+            System.out.println("Videoconsolas: "+producto.getNombre());
+        }
+	*/	
+		
+	
+		
+		
+		
+		// save a couple of customers
      /*   repository.save(new Producto("Jack", "Bauer"));
         repository.save(new Producto("Chloe", "O'Brian"));
         repository.save(new Producto("Kim", "Bauer"));
@@ -66,8 +97,8 @@ public class DataBaseUsage implements CommandLineRunner {
 	
 	@RequestMapping("/")
 	public ModelAndView tablon() {
-
-		return new ModelAndView("index");
+		productos = repository.findAll(); //cada vez que se recargue carga todos los productos de la BD para que siempre este actualizado
+		return new ModelAndView("index").addObject("productos",productos);
 	}
 	
 }

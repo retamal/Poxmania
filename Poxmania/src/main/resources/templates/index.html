@@ -68,6 +68,13 @@
     			<a th:href="@{'/poneranuncio?var='+${it.count}}"><span th:text="${producto.nombre}">Nombre </span><b>/</b><span th:text="${producto.categoria}">Categoria </span><b>/</b><span th:text="${producto.imagen}">Imagen </span><b>/</b><span th:text="${producto.descripcion}">Descripcion </span><b>/</b><span th:text="${producto.cantidad}">Cantidad </span><b>/</b><span th:text="${producto.precio}">Precio </span></a><br></br>		
 			</tr>
         </div>-->
+        
+        <div align="center" id="tablaProductos">
+	        <div class="espacioproducto" th:each="producto : ${productos}">
+	        	<div th:text="${producto.nombre}">nombrepruebaquenodebeverse</div>
+	        </div>
+        </div>
+        
 
     </div>
 
