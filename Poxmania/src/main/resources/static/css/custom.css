@@ -143,6 +143,11 @@
 #menuprincipal {
     background-color: white;
     border: 0px;
+    padding-bottom: 15px;
+    
+      -webkit-box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
+    box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
 }
 
 .container-fluid {
@@ -158,6 +163,7 @@
 .botonbarra {
     background-color: #EBEBEB;
     border: 1px solid #C6C6C6;
+    border-bottom: 0px;
     border-radius: 0;
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;

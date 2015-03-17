@@ -19,15 +19,16 @@ public class ProductoController {
 	//private List<Anuncio> anuncios = new ArrayList<>();
 	private List<Producto> productos = new CopyOnWriteArrayList<>(); //esta preparada para k añadan anuncios a la vez
 	
-	
+	/*
 		
 	@RequestMapping("/")
 	public ModelAndView inicio(HttpSession sesion) {
-		if (sesion.isNew()){
+		/*if (sesion.isNew()){
 			return new ModelAndView("bienvenida");
 		}else{
-			return new ModelAndView("index").addObject("productos",productos);	
+			return new ModelAndView("index");	
 		}
+		return new ModelAndView("index");	
 		
 	}
 	
@@ -46,7 +47,7 @@ public class ProductoController {
 		return new ModelAndView("noticia_plantilla").addObject("nombre",producto.getNombre()).addObject("categoria",producto.getCategoria()).addObject("imagen",producto.getImagen()).addObject("descripcion",producto.getDescripcion()).addObject("cantidad",producto.getCantidad()).addObject("precio",producto.getPrecio());	
 	}
 	
-	
+	*/
 
 
 }
