@@ -174,3 +174,97 @@
   padding: 1px;
   margin: auto;
 }
+
+/************ TABLAS DE PRODUCTOS ***************/
+
+table{
+    font-size: 12em;
+}
+
+.espacioproducto{
+    margin: 10px;
+    padding: 0px;
+    border:1px solid #b9b9b9;    
+    display:inline-block;    
+    width: 300px;
+    height: 500px;    
+    
+     -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.espacioproducto:hover{
+    
+    border-color: #bf3288;
+    border-bottom: 4px solid #bf3288;
+    
+       
+}
+
+
+.imagenproducto{
+    margin:0;
+    padding:0;
+    position: relative;
+    width:298px;
+    height: 298px;
+    background-color: #b100ff;
+    display: block;
+    background-image: url(../img/vistapreviaprueba.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.textoproducto{ /*para que no me descoloque divs debo meter el texto dentro de este div fijo*/
+     margin:0;
+    padding:0;
+    position: relative;
+    width:300px;
+    height: 200px;
+    
+    display: block;
+}
+
+.nombreproducto{   
+    width: 290px;
+    margin:5;
+    padding:0;
+    position: relative;
+    text-align: left;
+    color:#303030;
+    font-size: 20px;
+    
+}
+.descripcionproducto{
+    width: 290px;
+    height: 100px;
+    margin:5;
+    padding:0;
+    position: relative;
+    
+    color:#aaa;
+    font-size: 18px;
+    text-align:justify;
+    
+    
+    overflow:hidden;
+    white-space:pre-line;
+    text-overflow: ellipsis;
+ 
+    
+    
+}
+.precioproducto{ 
+    width: 290px;
+    margin:5;
+    padding:0;
+    position: relative;
+    text-align: right;
+    color:#eb0b2b;
+    font-size: 30px;
+    display: inline-block;
+    font-weight: bold;
+    
+}
+

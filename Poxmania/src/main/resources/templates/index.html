@@ -21,7 +21,7 @@
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                     <span class="glyphicon glyphicon-search" aria-hidden="true" id="iconolupa"></span>
-                    <input type="text" class="form-control" placeholder="Que deseas buscar?" id="campotexto"></input>
+                    <input type="text" class="form-control" placeholder="¿Qué deseas buscar?" id="campotexto"></input>
                 </div>
                 <button type="submit" class="btn btn-default" id="botonbuscar">Buscar</button>
             </form>
@@ -71,7 +71,13 @@
         
         <div align="center" id="tablaProductos">
 	        <div class="espacioproducto" th:each="producto : ${productos}">
-	        	<div th:text="${producto.nombre}">nombrepruebaquenodebeverse</div>
+	        
+	        	<div class="imagenproducto container" th:text="${producto.imagen}">url de la imagen</div>
+	        	<div class="textoproducto">
+		        	<div class="nombreproducto container" th:text="${producto.nombre}">nombrepruebaquenodebeverse</div>
+		        	<div class="descripcionproducto container" th:text="${producto.descripcion}">descripcionwachi</div>
+		        	<div class="precioproducto container" th:text="${producto.precio}+ €">preciocaro</div>
+	        	</div>
 	        </div>
         </div>
         
