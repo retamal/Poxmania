@@ -41,37 +41,33 @@
 
                 <div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
-                        <span class="glyphicon glyphicon-home iconoboton"></span>
+                        <span class="glyphicon glyphicon-home iconoboton" id="casita"></span>
                     </button>
                 </div><div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
                         Pequeños electrodomésticos
                     </button>
-                </div>
-
-                <div class="btn-group">
+                </div><div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
                         Televisiones
                     </button>
-                </div>
-
-                <div class="btn-group">
+                </div><div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
                         Informática
                     </button>
-                </div>
-
-                <div class="btn-group">
+                </div><div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
                         Videoconsolas
                     </button>
                 </div>
-
-
-
-
             </div>
         </nav>
+        
+        <div align="center" id="tablaProductos">
+        	<tr th:each="producto it : ${productos}">
+    			<a th:href="@{'/poneranuncio?var='+${it.count}}"><span th:text="${producto.nombre}">Nombre </span><b>/</b><span th:text="${producto.categoria}">Categoria </span><b>/</b><span th:text="${producto.imagen}">Imagen </span><b>/</b><span th:text="${producto.descripcion}">Descripcion </span><b>/</b><span th:text="${producto.cantidad}">Cantidad </span><b>/</b><span th:text="${producto.precio}">Precio </span></a><br></br>		
+			</tr>
+        </div>
 
     </div>
 

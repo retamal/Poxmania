@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+	<link rel="stylesheet" href="estilo.css"></link>
+</head>
+
+<body>
+
+    <div id="meganoticia">
+        <p>Nombre: <span th:text="${nombre}">Pepito</span>
+        </p>
+        <p>Categoria: <span th:text="${categoria}">Es muy guapo</span>
+        </p>
+        <p>Imagen: <span th:text="${imagen}">Es muy guapo</span>
+        </p>
+        <p>Descripcion:</p>
+        <p><span th:text="${descripcion}">En un lugar de la mancha...</span>
+        </p>
+        <p>Cantidad: <span th:text="${cantidad}">Es muy guapo</span>
+        </p>
+        <p>Precio: <span th:text="${precio}">Es muy guapo</span>
+        </p>
+        
+        <a href="/">Ir al tablon de anuncios</a>
+
+    </div>
+</body>
+
+</html>

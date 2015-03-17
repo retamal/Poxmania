@@ -6,6 +6,8 @@
     list-style-type: none;
     font-family: "Trebuchet MS", "Helvetica", sans-serif;
 }
+
+
 /***************** C A B E C E R A *********************************/
 
 #cabecera {
@@ -144,7 +146,13 @@
 }
 
 .container-fluid {
+	width: 1000px;
+	padding: 0;
+	padding-top: 10px;
     margin: 0 auto;
+    background-color: white;
+    border-bottom: 1px solid #C6C6C6;
+    position: relative;
 }
 
 .botonbarra {
@@ -153,4 +161,10 @@
     border-radius: 0;
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
+    position: relative;
+}
+
+#casita {
+  padding: 1px;
+  margin: auto;
 }

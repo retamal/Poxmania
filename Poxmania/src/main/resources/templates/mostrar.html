@@ -3,9 +3,12 @@
 
 	<h1>Anuncio</h1>
 
-	<p th:text="|Nombre: ${anuncio.nombre}|" />
-	<p th:text="|Asunto: ${anuncio.asunto}|" />
-	<p th:text="|Comentario: ${anuncio.comentario}|" />
+	<p th:text="|Nombre: ${producto.nombre}|" />
+	<p th:text="|Categoria: ${producto.categoria}|" />
+	<p th:text="|Imagen: ${producto.imagen}|" />
+	<p th:text="|Descripcion: ${producto.descripcion}|" />
+	<p th:text="|Cantidad: ${producto.cantidad}|" />
+	<p th:text="|Precio: ${producto.precio}|" />
 
 	<a href="/">Volver</a>
 </body>
