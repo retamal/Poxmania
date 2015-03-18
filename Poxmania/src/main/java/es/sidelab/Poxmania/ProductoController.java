@@ -56,6 +56,11 @@ public class ProductoController {
 		String fileName = repository.count()+".jpg";
 	}
 	*/
+	@RequestMapping("/acceso")
+	public ModelAndView acceso() {
+		return new ModelAndView("acceso");
+	}
+	
 	
 	@RequestMapping("/bienvenida")
 	public ModelAndView tablon() {

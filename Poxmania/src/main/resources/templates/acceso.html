@@ -35,7 +35,7 @@
             </form>
         </div>
         <div id="botonesusuario">
-            <a class="btn  botonuser" href="acceso" role="button">
+            <a class="btn  botonuser" href="#" role="button">
                 <div class="textoboton"><span class="glyphicon glyphicon-user iconoboton"></span>Mi cuenta</div>
             </a>
             <a class="btn  botonuser" href="#" role="button">
@@ -82,16 +82,14 @@
         </div>-->
     </div>
 
-    <div align="center" id="tablaProductos">
-        <div class="espacioproducto" th:each="producto : ${productos}">
-
-            <div class="imagenproducto container" th:text="${producto.imagen}">url de la imagen</div>
-            <div class="textoproducto">
-                <div class="nombreproducto container" th:text="${producto.nombre}">nombrepruebaquenodebeverse</div>
-                <div class="descripcionproducto container" th:text="${producto.descripcion}">descripcionwachi</div>
-                <div class="precioproducto container" th:text="${producto.precio}+ €">preciocaro</div>
-            </div>
-        </div>
+    <div id="panelacceso">
+    	<form class="navbar-form" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control " placeholder="Nombre de usuario"></input>
+                    <input type="text" class="form-control " placeholder="Contraseña"></input>
+                </div>
+                <button type="submit" class="btn btn-default" id="botonentrar">Entrar</button>
+        </form>
     </div>
 
 
