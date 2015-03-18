@@ -4,12 +4,14 @@ package es.sidelab.Poxmania;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.io.File;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,7 +20,7 @@ public class ProductoController {
 
 	//private List<Anuncio> anuncios = new ArrayList<>();
 	private List<Producto> productos = new CopyOnWriteArrayList<>(); //esta preparada para k añadan anuncios a la vez
-	
+	private  static final String FILES_FOLDER = "files";
 	/*
 		
 	@RequestMapping("/")
@@ -48,6 +50,13 @@ public class ProductoController {
 	}
 	
 	*/
+	/*@RequestMapping(value="insertar", method=RequestMethod.POST)
+	public ModelAndView insertar(@RequestParam("file") MultipartFile file,Product producto, HttpSession sesion){
+		
+		String fileName = repository.count()+".jpg";
+	}
+	*/
+	
 	@RequestMapping("/bienvenida")
 	public ModelAndView tablon() {
 
