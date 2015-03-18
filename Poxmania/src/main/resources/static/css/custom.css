@@ -312,10 +312,57 @@ table {
 
 /******* ACCESO *******/
 
+#formulariologin2{
+    margin:0;
+    padding: 0;
+}
+
 #panelacceso{
+    margin: auto;
 	margin-top:65px;
-	width:500px;
-	height:700px;
-	background-color:red;
-	
+	width:350px;
+	height:600px;
+    background-image: url(../img/accesoimg.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;	
+}
+
+#contenedorentradalogin{
+    width:350px;
+    height: 120px;
+    margin-top: 460px;    
+    
+}
+
+.entradalogin{  
+    margin-left: 10;
+    display: block;
+    height: 40px;
+    width: 330px !important;
+    margin-bottom: 4px;
+    border-radius: 0px;
+    border-color: #5a005d;
+}
+
+#botonentrar{
+    margin: auto;
+   display: block;
+    height: 40px;
+    width: 330px !important;
+    margin-bottom: 4px;
+    border-radius: 0px;
+    
+    border: 1px solid #5a005d;
+    color: white;    
+    font-size: 14px;
+    text-shadow: 0px 3px 4px rgba(150, 150, 150, 1);
+    
+    background: rgba(254,182,69,1);
+background: -moz-linear-gradient(top, rgba(254,182,69,1) 0%, rgba(240,202,14,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,182,69,1)), color-stop(100%, rgba(240,202,14,1)));
+background: -webkit-linear-gradient(top, rgba(254,182,69,1) 0%, rgba(240,202,14,1) 100%);
+background: -o-linear-gradient(top, rgba(254,182,69,1) 0%, rgba(240,202,14,1) 100%);
+background: -ms-linear-gradient(top, rgba(254,182,69,1) 0%, rgba(240,202,14,1) 100%);
+background: linear-gradient(to bottom, rgba(254,182,69,1) 0%, rgba(240,202,14,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb645', endColorstr='#f0ca0e', GradientType=0 );
 }

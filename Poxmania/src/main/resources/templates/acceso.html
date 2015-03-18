@@ -14,8 +14,9 @@
 <body>
 
     <div id="cabecera">
-
+		<a href="/" style="text-decoration:none">
         <div id="logo"></div>
+        </a>
 
         <div id="formulario">
             <form class="navbar-form navbar-left" role="search">
@@ -35,7 +36,7 @@
             </form>
         </div>
         <div id="botonesusuario">
-            <a class="btn  botonuser" href="#" role="button">
+            <a class="btn  botonuser" href="acceso" role="button">
                 <div class="textoboton"><span class="glyphicon glyphicon-user iconoboton"></span>Mi cuenta</div>
             </a>
             <a class="btn  botonuser" href="#" role="button">
@@ -44,13 +45,15 @@
         </div>
 
         <nav id="menuprincipal" class="navbar navbar-default">
-            <div class="container-fluid">
+            <div class="container-fluid" style="height:44px">
 
 
                 <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
+                    <a href="/" style="text-decoration:none">
+                    <button  type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
                         <span class="glyphicon glyphicon-home iconoboton" id="casita"></span>
                     </button>
+                    </a>
                 </div>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
@@ -58,9 +61,11 @@
                     </button>
                 </div>
                 <div class="btn-group">
+                    
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
                         Televisiones
                     </button>
+                   
                 </div>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
@@ -83,12 +88,13 @@
     </div>
 
     <div id="panelacceso">
-    	<form class="navbar-form" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control " placeholder="Nombre de usuario"></input>
-                    <input type="text" class="form-control " placeholder="Contraseña"></input>
+    	<form class="navbar-form" id="formulariologin2" role="search">
+                <div class="form-group" id="contenedorentradalogin">
+                    <input type="text" class="form-control entradalogin" placeholder="Nombre de usuario"></input>
+                    <input type="password" class="form-control entradalogin" placeholder="Contraseña"></input>
+                    <button type="submit" id="botonentrar">Entrar</button>
                 </div>
-                <button type="submit" class="btn btn-default" id="botonentrar">Entrar</button>
+                
         </form>
     </div>
 
