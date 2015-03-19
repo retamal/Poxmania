@@ -8,6 +8,7 @@ import java.io.File;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,54 +19,37 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ProductoController {
 
-	//private List<Anuncio> anuncios = new ArrayList<>();
-	private List<Producto> productos = new CopyOnWriteArrayList<>(); //esta preparada para k añadan anuncios a la vez
-	private  static final String FILES_FOLDER = "files";
-	/*
+	
+	@Autowired
+	private Usuario usuario; //sesion de usuario por defecto admin es falso y cesta vacia
+	@Autowired
+	private ProductoRepository repository;
+	
+	Iterable<Producto> productos;
+	
+	
+	@RequestMapping("/validacion") //ADMINISTRACION //al darle a loguearse vienen aqui
+	//FALLO SEGURIDAD SI PONGO EL NOMBRE DEL TEMPLATE CARGA?
+	public ModelAndView validacion(@RequestParam String	user,@RequestParam String pass) {
+				
+		if((user.equals("admin"))&&(Integer.parseInt(pass)==1234)){
+			System.out.println("CONTRASEÑA CORRECTA");
+			usuario.setAdmin(true);
+			return new ModelAndView("bienvenida");	
+		}				
 		
-	@RequestMapping("/")
-	public ModelAndView inicio(HttpSession sesion) {
-		/*if (sesion.isNew()){
+		productos = repository.findAll(); // cada vez que se recargue carga		
+		return new ModelAndView("index").addObject("productos", productos);			
+	}
+
+	@RequestMapping("/acceso")
+	public ModelAndView acceso() {//si esta puesto de admin 
+		if (usuario.isAdmin()){
 			return new ModelAndView("bienvenida");
 		}else{
-			return new ModelAndView("index");	
+			return new ModelAndView("acceso");
 		}
-		return new ModelAndView("index");	
-		
 	}
 	
-	@RequestMapping("/anuncioanadido")
-	public ModelAndView anadido(@RequestParam String nombre,@RequestParam String categoria,@RequestParam String imagen, @RequestParam String descripcion, @RequestParam int cantidad, @RequestParam int precio) {
-		
-		Producto product1 = new Producto(nombre, categoria, imagen, descripcion, cantidad, precio);
-		productos.add(product1);
-		return new ModelAndView("index").addObject("productos",productos);	
-	}
-	
-	@RequestMapping("/poneranuncio")
-	public ModelAndView anuncio(@RequestParam int var) {
-		Producto producto = productos.get(var-1);
-	
-		return new ModelAndView("noticia_plantilla").addObject("nombre",producto.getNombre()).addObject("categoria",producto.getCategoria()).addObject("imagen",producto.getImagen()).addObject("descripcion",producto.getDescripcion()).addObject("cantidad",producto.getCantidad()).addObject("precio",producto.getPrecio());	
-	}
-	
-	*/
-	/*@RequestMapping(value="insertar", method=RequestMethod.POST)
-	public ModelAndView insertar(@RequestParam("file") MultipartFile file,Product producto, HttpSession sesion){
-		
-		String fileName = repository.count()+".jpg";
-	}
-	*/
-	@RequestMapping("/acceso")
-	public ModelAndView acceso() {
-		return new ModelAndView("acceso");
-	}
-	
-	
-	@RequestMapping("/bienvenida")
-	public ModelAndView tablon() {
-
-		return new ModelAndView("bienvenida");
-	}
 
 }

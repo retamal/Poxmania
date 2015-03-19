@@ -56,26 +56,33 @@
                     </a>
                 </div>
                 <div class="btn-group">
+                    <a href="/categorias?cat=Electrodomesticos" style="text-decoration:none">
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
                         Pequeños electrodomésticos
                     </button>
+                    </a>
                 </div>
                 <div class="btn-group">
-                    
+                    <a href="/categorias?cat=Televisiones" style="text-decoration:none">
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
                         Televisiones
                     </button>
+                    </a>
                    
                 </div>
                 <div class="btn-group">
+                	<a href="/categorias?cat=Informatica" style="text-decoration:none">
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
                         Informática
                     </button>
+                    </a>
                 </div>
                 <div class="btn-group">
+                	<a href="/categorias?cat=Videoconsolas" style="text-decoration:none">
                     <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
                         Videoconsolas
                     </button>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -88,10 +95,10 @@
     </div>
 
     <div id="panelacceso">
-    	<form class="navbar-form" id="formulariologin2" role="search">
+    	<form class="navbar-form" id="formulariologin2" role="search" action="validacion" method='post'>
                 <div class="form-group" id="contenedorentradalogin">
-                    <input type="text" class="form-control entradalogin" placeholder="Nombre de usuario"></input>
-                    <input type="password" class="form-control entradalogin" placeholder="Contraseña"></input>
+                    <input type="text" class="form-control entradalogin" name='user' placeholder="Nombre de usuario"></input>
+                    <input type="password" class="form-control entradalogin" name='pass' placeholder="Contraseña"></input>
                     <button type="submit" id="botonentrar">Entrar</button>
                 </div>
                 

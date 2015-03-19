@@ -29,6 +29,7 @@
 #formulario {
     margin-top: 10px;
     border-radius: 4px;
+    
     background-color: rgba(212, 212, 212, 0.69);
     display: inline-block;
     margin-bottom: 6px;
@@ -51,6 +52,7 @@
 }
 
 #botonbuscar {
+    
     background: rgba(207, 83, 157, 1);
     background: -moz-linear-gradient(top, rgba(207, 83, 157, 1) 0%, rgba(192, 51, 138, 1) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(207, 83, 157, 1)), color-stop(100%, rgba(192, 51, 138, 1)));
@@ -153,7 +155,8 @@
 
 #botonesusuario {
     margin-right: 15px;
-    float: right;
+    float: right !important;
+    z-index: 2;
     position: relative;
     display: inline-block;
 }
@@ -365,4 +368,8 @@ background: -o-linear-gradient(top, rgba(254,182,69,1) 0%, rgba(240,202,14,1) 10
 background: -ms-linear-gradient(top, rgba(254,182,69,1) 0%, rgba(240,202,14,1) 100%);
 background: linear-gradient(to bottom, rgba(254,182,69,1) 0%, rgba(240,202,14,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb645', endColorstr='#f0ca0e', GradientType=0 );
+}
+
+#botonentrar::visited{
+    background: rgb(0, 255, 59);
 }
