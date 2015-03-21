@@ -1,0 +1,61 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"></link>
+    <title>Poxmania</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href='css/custom.css'></link>
+</head>
+
+<body>
+
+    <div id="cabecera">
+		<a href="/acceso" style="text-decoration:none">
+        <div id="logoadmin"></div>
+        </a>
+
+       
+        <div id="botonesusuario">
+            <a class="btn  botonuser" href="desconectar" role="button">
+                <div class="textoboton"><span class="glyphicon glyphicon-user iconoboton"></span>Salir</div>
+            </a>            
+        </div>
+    </div>
+       
+
+        <!--       <div align="center" id="tablaProductos">
+        	<tr th:each="producto it : ${productos}">
+    			<a th:href="@{'/poneranuncio?var='+${it.count}}"><span th:text="${producto.nombre}">Nombre </span><b>/</b><span th:text="${producto.categoria}">Categoria </span><b>/</b><span th:text="${producto.imagen}">Imagen </span><b>/</b><span th:text="${producto.descripcion}">Descripcion </span><b>/</b><span th:text="${producto.cantidad}">Cantidad </span><b>/</b><span th:text="${producto.precio}">Precio </span></a><br></br>		
+			</tr>
+        </div>-->
+    
+    <div id="contenedoradmin">
+    
+    	
+    	<table id="tablaadmin">
+    		<tr class="filaproducto" th:each="producto:${productos}">
+    			<td class="columnaid" th:text="${producto.id}">ID</td>
+    			<td class="columnacat" th:text="${producto.categoria}">Cat</td>
+    			<td class="columnacat" th:text="${producto.nombre}">Nom</td>
+    			<td class="columnacat" th:text="${producto.cantidad}+' uds.'">Can</td>
+    			<td class="columnacat" th:text="${producto.precio}+' €'">Prec</td>
+    			<td class="columnaedicion" ><a th:href="@{'/editar?elemento='+${producto.id}}" style="text-decoration:none">editar</a></td>
+    			<td class="columnaedicion" ><a th:href="@{'/borrar?elemento='+${producto.id}}" style="text-decoration:none">eliminar</a></td>
+    		</tr>
+    	</table>	    
+       
+    </div>
+   
+
+
+
+
+
+
+</body>
+
+</html>

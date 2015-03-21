@@ -1,0 +1,73 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"></link>
+    <title>Poxmania</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href='css/custom.css'></link>
+</head>
+
+<body>
+
+    <div id="cabecera">
+		<a href="/acceso" style="text-decoration:none">
+        <div id="logoadmin"></div>
+        </a>
+
+       
+        <div id="botonesusuario">
+            <a class="btn  botonuser" href="desconectar" role="button">
+                <div class="textoboton"><span class="glyphicon glyphicon-user iconoboton"></span>Salir</div>
+            </a>            
+        </div>
+    </div>
+       
+
+        <!--       <div align="center" id="tablaProductos">
+        	<tr th:each="producto it : ${productos}">
+    			<a th:href="@{'/poneranuncio?var='+${it.count}}"><span th:text="${producto.nombre}">Nombre </span><b>/</b><span th:text="${producto.categoria}">Categoria </span><b>/</b><span th:text="${producto.imagen}">Imagen </span><b>/</b><span th:text="${producto.descripcion}">Descripcion </span><b>/</b><span th:text="${producto.cantidad}">Cantidad </span><b>/</b><span th:text="${producto.precio}">Precio </span></a><br></br>		
+			</tr>
+        </div>-->
+    
+    <div id="contenedoradmin">
+        
+            <div class="botonadmin">
+                <a href="/dardealta" style="text-decoration:none">
+                <div class="botonadminajustado">
+                    <div class="textobotonadmin">DAR DE ALTA NUEVO ARTÍCULO</div>
+                    
+                </div>
+                </a>
+            </div>
+            <div class="botonadmin">
+                <a href="/modificararticulos" style="text-decoration:none">
+                <div class="botonadminajustado">
+                    <div class="textobotonadmin">MODIFICAR/ELIMINAR ARTÍCULO</div>
+                    
+                </div>
+                </a>
+            </div>
+        
+            <div class="botonadmin">
+                <a href="/" style="text-decoration:none">
+                <div class="botonadminajustado">
+                    <div class="textobotonadmin">GESTIÓN DE PEDIDOS</div>
+                </div>
+                </a>
+            </div>
+       
+    </div>
+   
+
+
+
+
+
+
+</body>
+
+</html>

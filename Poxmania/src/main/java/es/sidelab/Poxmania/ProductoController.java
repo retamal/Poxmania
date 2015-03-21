@@ -35,7 +35,7 @@ public class ProductoController { //
 		if((user.equals("admin"))&&(Integer.parseInt(pass)==1234)){
 			System.out.println("CONTRASEÑA CORRECTA");
 			usuario.setAdmin(true);
-			return new ModelAndView("bienvenida");	
+			return new ModelAndView("pantallaadministracion");	
 		}				
 		
 		productos = repository.findAll(); // cada vez que se recargue carga		
@@ -45,10 +45,16 @@ public class ProductoController { //
 	@RequestMapping("/acceso")
 	public ModelAndView acceso() {//si esta puesto de admin 
 		if (usuario.isAdmin()){
-			return new ModelAndView("bienvenida");
+			return new ModelAndView("pantallaadministracion");
 		}else{
 			return new ModelAndView("acceso");
 		}
+	}
+	@RequestMapping("/desconectar")
+	public ModelAndView desconectar() {//si esta puesto de admin 
+		usuario.setAdmin(false);
+		productos = repository.findAll(); // cada vez que se recargue carga		
+		return new ModelAndView("index").addObject("productos", productos);		
 	}
 	
 

@@ -373,3 +373,140 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb645', end
 #botonentrar::visited{
     background: rgb(0, 255, 59);
 }
+
+/********* PANTALLA DE ADMINISTRACION *********/
+
+#logoadmin {
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 290px;
+    height: 65px;
+    background-image: url(../img/poxmanialogo2.png);
+    display: inline-block;
+    position: relative;
+}
+
+#contenedoradmin{
+    margin-top: 20px;
+}
+
+.botonadmin{
+    width:400px;
+    height: 90px;
+    margin: auto;  
+    margin-top: 10px;
+    
+    border: 1px solid #914e8a;
+    
+    text-shadow: 0px -1px rgba(0, 0, 0, 0.8);
+    
+    background: rgba(245,152,208,1);
+    background: -moz-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(207,83,157,1) 4%, rgba(192,51,138,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(245,152,208,1)), color-stop(4%, rgba(207,83,157,1)), color-stop(100%, rgba(192,51,138,1)));
+    background: -webkit-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(207,83,157,1) 4%, rgba(192,51,138,1) 100%);
+    background: -o-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(207,83,157,1) 4%, rgba(192,51,138,1) 100%);
+    background: -ms-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(207,83,157,1) 4%, rgba(192,51,138,1) 100%);
+    background: linear-gradient(to bottom, rgba(245,152,208,1) 0%, rgba(207,83,157,1) 4%, rgba(192,51,138,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f598d0', endColorstr='#c0338a', GradientType=0 );
+}
+
+.botonadmin:hover{
+    background: rgba(245,152,208,1);
+    background: -moz-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(163,67,125,1) 4%, rgba(125,34,92,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(245,152,208,1)), color-stop(4%, rgba(163,67,125,1)), color-stop(100%, rgba(125,34,92,1)));
+    background: -webkit-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(163,67,125,1) 4%, rgba(125,34,92,1) 100%);
+    background: -o-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(163,67,125,1) 4%, rgba(125,34,92,1) 100%);
+    background: -ms-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(163,67,125,1) 4%, rgba(125,34,92,1) 100%);
+    background: linear-gradient(to bottom, rgba(245,152,208,1) 0%, rgba(163,67,125,1) 4%, rgba(125,34,92,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f598d0', endColorstr='#7d225c', GradientType=0 );
+    
+    font-weight: bold;
+}
+
+.botonadminajustado{
+    width:400px;
+    height: 90px;    
+    text-align: center;
+}
+
+.textobotonadmin{
+    padding-top: 25px;
+    font-size: 12em;
+    color: white;
+}
+
+/****** GESTION DE PEDIDOS ADMIN **********/
+
+#tablaadmin{
+    
+    margin: auto;
+}
+
+.filaproducto{
+    background-color: white;
+}
+.filaproducto:hover{
+    border: 1px solid #513562;
+    background-color: #ebebeb;
+   
+}
+
+.columnaid{
+    background-color: #bf3288;
+    color: white;
+    text-shadow: 0px -1px rgba(0, 0, 0, 0.8);
+    padding: 3px;
+    margin-right: 5px;
+    border: 1px solid black;
+}
+.columnacat{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding: 10px;    
+}
+
+.columnaedicion:hover{
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(232,186,18,1) 5%, rgba(232,232,35,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(5%, rgba(232,186,18,1)), color-stop(100%, rgba(232,232,35,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(232,186,18,1) 5%, rgba(232,232,35,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(232,186,18,1) 5%, rgba(232,232,35,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(232,186,18,1) 5%, rgba(232,232,35,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(232,186,18,1) 5%, rgba(232,232,35,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e823', GradientType=0 );
+}
+.columnaedicion{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding: 5px;
+    
+    
+    text-shadow: 0px -1px rgba(0, 0, 0, 0.8);
+    
+    background: rgba(245,152,208,1);
+    background: -moz-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(207,83,157,1) 4%, rgba(192,51,138,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(245,152,208,1)), color-stop(4%, rgba(207,83,157,1)), color-stop(100%, rgba(192,51,138,1)));
+    background: -webkit-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(207,83,157,1) 4%, rgba(192,51,138,1) 100%);
+    background: -o-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(207,83,157,1) 4%, rgba(192,51,138,1) 100%);
+    background: -ms-linear-gradient(top, rgba(245,152,208,1) 0%, rgba(207,83,157,1) 4%, rgba(192,51,138,1) 100%);
+    background: linear-gradient(to bottom, rgba(245,152,208,1) 0%, rgba(207,83,157,1) 4%, rgba(192,51,138,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f598d0', endColorstr='#c0338a', GradientType=0 );
+}
+.columnaedicion a{
+    color: white !important;
+}
+
+/**** DAR DE ALTA UN ARTICULO ***********/
+
+#contenedoralta{
+    margin: auto;
+    width: 400;
+    margin-top: 20px;
+    border: 1px solid black;
+    font-size: 12em;
+    padding: 10px;
+    
+    
+}
