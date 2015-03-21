@@ -23,22 +23,16 @@ public class DataBaseUsage implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// String nombre, String categoria, String imagen, String descripcion,
-		// int cantidad,int precio
-
-		// Meto productos de prueba
-		// repository.save(new
-		// Producto("PSVita","Videoconsolas","imagen","Videoconsola portatil de Sony. Color negro.",2,199));
-		// repository.save(new
-		// Producto("Intel i7 3770k","Informatica","imagen","Procesador a 4,0 GHz.",4,380));
-
 		
-		// Iterable<Producto> productos = repository.findAll();
-	/*	productos = repository.findAll();
-		for (Producto producto : productos) {
-			System.out.println("Todos los productos: " + producto.getNombre());
-		}
-	*/	
+		/* QUITAR PARA AÑADIR PRODUCTOS POR DEFECTO EN LA BD
+		repository.save(new Producto("PSVita","Videoconsolas","vita.jpg","Videoconsola portatil de Sony. Color negro.",2,199));
+		repository.save(new Producto("Intel i7 3770k","Informatica","i7.jpg","Procesador a 4,0 GHz.",5,180));
+		repository.save(new Producto("SuperPOX-PC","Informatica","poxpc.jpg","Un gran PC prefabricado con componentes de baja calidad ideal para venderselo a pobres incautos",10,680));
+		repository.save(new Producto("Monitor LG SV-12","Televisiones","lg.jpg","Monitor LG SV-12 de 22\" y 5ms de respuesta. Ideal para jugar en él. Color negro azabache.",8,99));
+		repository.save(new Producto("GameBoy Color","Videoconsolas","gameboy.jpg","Vuelve la clásica GameBoy Color. Color morado transparente. Disfruta de los juegos de siempre.",6,40));
+		repository.save(new Producto("Nevera Fagor T-103","Electrodomesticos","fagor.jpg","Nevera Fagor T-103 No-Frost de 3 puertas. Conserva los alimentos ahorrando luz.",6,380));
+		repository.save(new Producto("N-Gage QD","Videoconsolas","ngage.jpg","Nokia renace como el ave fénix con su nuevo teléfono-videoconsola. Pantalla a color capaz de mover los juegos más exigentes del mercado.",3,160));
+			*/
 	
 	}
 

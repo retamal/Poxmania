@@ -94,8 +94,8 @@
 
     <div align="center" id="tablaProductos">
         <div class="espacioproducto" th:each="producto : ${productos}">
-
-            <div class="imagenproducto container" th:text="${producto.imagen}">url de la imagen</div>
+        
+            <div class="imagenproducto container"><img width="298" height="298" th:src="@{'image/'+${producto.imagen}}"></img></div>
             <div class="textoproducto">
                 <div class="nombreproducto container" th:text="${producto.nombre}">nombrepruebaquenodebeverse</div>
                 <div class="descripcionproducto container" th:text="${producto.descripcion}">descripcionwachi</div>
