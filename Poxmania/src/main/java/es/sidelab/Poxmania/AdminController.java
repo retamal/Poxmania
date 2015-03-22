@@ -104,7 +104,7 @@ public class AdminController { //
 		return new ModelAndView("index").addObject("productos", productos);			
 	}
 	
-	@RequestMapping("/borrar") //dar de alta un nuevo articulo
+	@RequestMapping("/borrar") //borrar un articulo
 	public ModelAndView borrarproducto(@RequestParam String	elemento) {
 				
 		if(usuario.isAdmin()){	
@@ -117,6 +117,77 @@ public class AdminController { //
 		return new ModelAndView("index").addObject("productos", productos);			
 	}
 	
+	@RequestMapping("/editar") //editar un articulo
+	public ModelAndView editarproducto(@RequestParam String	elemento) {
+				
+		if(usuario.isAdmin()){	
+			Producto sacado = repository.findOne((long)Integer.parseInt(elemento));			
+			return new ModelAndView("editar_articulo").addObject("producto",sacado);	
+		}				
+		
+		productos = repository.findAll(); // cada vez que se recargue carga		
+		return new ModelAndView("index").addObject("productos", productos);			
+	}
+	
+	@RequestMapping(value="/comprobareditar" , method = RequestMethod.POST) //editar un articulo
+	public ModelAndView comprobacionedicionarticulo(@RequestParam String	numid,@RequestParam String	nomp, @RequestParam String	catp, @RequestParam String	prep, @RequestParam String	canp, @RequestParam String	desp,@RequestParam MultipartFile imagen) {
+				
+		if(usuario.isAdmin()){			
+			System.out.println("PROBANDO");
+			if(!nomp.isEmpty()&&!prep.isEmpty()&&!canp.isEmpty()&&!desp.isEmpty()){//comprobar que solo meto en la BD si tiene todos los datos
+				System.out.println("Nombre: "+nomp);
+				System.out.println("Categoria: "+catp);
+				System.out.println("Precio: "+Integer.parseInt(prep));
+				System.out.println("Cantidad: "+Integer.parseInt(canp));
+				System.out.println("Descripcion: "+desp);
+				System.out.println("ID: "+numid);
+			
+				
+				Producto articuloparaeditar = repository.findOne((long)Integer.parseInt(numid));
+				
+				articuloparaeditar.setCantidad(Integer.parseInt(canp));
+				articuloparaeditar.setPrecio(Integer.parseInt(prep));
+				articuloparaeditar.setCategoria(catp);
+				articuloparaeditar.setDescripcion(desp);
+				articuloparaeditar.setNombre(nomp);
+				
+				String imagenaux= articuloparaeditar.getImagen();
+										
+				
+				// TEMA DE LA IMAGEN 
+				String fileName = "Producto_"+articuloparaeditar.getId() + ".jpg";
+				if (!imagen.isEmpty()) { //si la imagen es valida
+					try {
+						File filesFolder = new File(FILES_FOLDER);
+						if (!filesFolder.exists()) {//creo directorio si no existe
+							filesFolder.mkdirs();
+						}
+
+						File uploadedFile = new File(filesFolder.getAbsolutePath(), fileName);
+						imagen.transferTo(uploadedFile);	
+						
+						articuloparaeditar.setImagen(fileName);
+					} catch (Exception e) {
+						System.out.println("Ha petado al subirse la imagen");
+						articuloparaeditar.setImagen(imagenaux);//imagen anterior
+					}
+				} else {
+					System.out.println("No se ha seleccionado ninguna imagen");//articulo sin imagen
+					articuloparaeditar.setImagen(imagenaux);	//imagen anterior
+					}
+				
+				
+								
+				repository.save(articuloparaeditar); //actualiza el articulo con la imagen correctamente :D
+				
+			}
+			
+			return new ModelAndView("pantallaadministracion");	
+		}				
+		
+		productos = repository.findAll(); // cada vez que se recargue carga		
+		return new ModelAndView("index").addObject("productos", productos);			
+	}
 
 
 	

@@ -35,6 +35,30 @@ public class DataBaseUsage implements CommandLineRunner {
 			*/
 	
 	}
+	
+	@RequestMapping("/buscarprecio")
+	public ModelAndView porprecio(@RequestParam String min,@RequestParam String max) {
+		if(!min.isEmpty()&&!max.isEmpty()){
+			productos = repository.findByPrecioBetween(Integer.parseInt(min), Integer.parseInt(max));										
+			return new ModelAndView("index").addObject("productos", productos);
+		}else{
+			productos = repository.findAll();										
+			return new ModelAndView("index").addObject("productos", productos);
+		}
+	}
+	
+	@RequestMapping("/buscarnombre")
+	public ModelAndView pornombre(@RequestParam String textoabuscar) {
+		if(!textoabuscar.isEmpty()){
+			productos = repository.findByNombreContaining(textoabuscar);										
+			return new ModelAndView("index").addObject("productos", productos);
+		}else{
+			productos = repository.findAll();										
+			return new ModelAndView("index").addObject("productos", productos);
+		}
+	}
+	
+	
 
 	@RequestMapping("/categorias")
 	public ModelAndView categorias(@RequestParam String cat) {

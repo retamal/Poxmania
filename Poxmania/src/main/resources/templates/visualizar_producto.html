@@ -83,31 +83,26 @@
                     </a>
                 </div>
             </div>
-        </nav>
-
-        <!--       <div align="center" id="tablaProductos">
-        	<tr th:each="producto it : ${productos}">
-    			<a th:href="@{'/poneranuncio?var='+${it.count}}"><span th:text="${producto.nombre}">Nombre </span><b>/</b><span th:text="${producto.categoria}">Categoria </span><b>/</b><span th:text="${producto.imagen}">Imagen </span><b>/</b><span th:text="${producto.descripcion}">Descripcion </span><b>/</b><span th:text="${producto.cantidad}">Cantidad </span><b>/</b><span th:text="${producto.precio}">Precio </span></a><br></br>		
-			</tr>
-        </div>-->
+        </nav>        
     </div>
-
-    <div align="center" id="tablaProductos">
-        <div class="espacioproducto" th:each="producto : ${productos}">
-        	<a th:href="@{'/visualizar?elemento='+${producto.id}}" style="text-decoration:none">
-            <div class="imagenproducto container"><img width="298" height="298" th:src="@{'image/'+${producto.imagen}}"></img></div>
-            <div class="textoproducto">
-                <div class="nombreproducto container" th:text="${producto.nombre}">nombrepruebaquenodebeverse</div>
-                <div class="descripcionproducto container" th:text="${producto.descripcion}">descripcionwachi</div>
-                <div class="precioproducto container" th:text="${producto.precio}+ €">preciocaro</div>
-            </div>
-            </a>
-        </div>
+    
+    
+    <div id="contenedor_producto">
+    	<div id="nombre_producto" th:text="${producto.nombre}">Nombre_del_producto</div>
+    	<img id="imagen_producto" width="298" height="298" th:src="@{'image/'+${producto.imagen}}"></img>
+    	<div id="contenedor_datos">
+    		<div id="precio_producto" th:text="${producto.precio}+ €">preciocaro</div>
+	    	<div id="estado_producto" th:switch="${producto.cantidad}">
+		        <p th:case="0" style="color:red" th:text="'Producto sin stock'">Producto Agotado :(</p>
+		        <p th:case="*" style="color:green" th:text="${producto.cantidad}+ ' unidades disponibles'">Si esta en Stock</p>
+		    </div>
+		    <div id="descripcion_producto" th:text="${producto.descripcion}">Descripcion_del_producto</div>	    	
+	    	
+	    	<a class="btn  botonuser2" th:href="@{'/metercesta?elemento='+${producto.id}}" role="button">
+	    	<div class="textoboton2"><span class="glyphicon glyphicon-shopping-cart iconoboton"></span>Añadir a la cesta</div>
+	        </a>
+	    </div>
     </div>
-
-
-
-
 
 </body>
 

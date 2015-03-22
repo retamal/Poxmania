@@ -155,8 +155,8 @@
 
 #botonesusuario {
     margin-right: 15px;
-    float: right !important;
-    z-index: 2;
+    float: right ;
+    
     position: relative;
     display: inline-block;
 }
@@ -260,9 +260,7 @@ table {
     height: 298px;
     background-color: #b100ff;
     display: block;
-    background-image: url(../img/vistapreviaprueba.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
+    
 }
 
 .textoproducto {
@@ -506,7 +504,92 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb645', end
     margin-top: 20px;
     border: 1px solid black;
     font-size: 12em;
-    padding: 10px;
+    padding: 10px;    
+}
+
+
+/****** VISUALIZAR UN PRODUCTO ********/
+
+#contenedor_producto{   
+    margin: auto;
+    margin-top: 70px;   
+    width:750px;
+    border: 1px solid rgb(171, 171, 171);
+}
+#nombre_producto{
+    color:#bf3288;
+    font-size: 4em; 
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#imagen_producto{
+    display: inline-block;
+    float:left;
+    padding-left: 10px;
+}
+
+#contenedor_datos{
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;    
+}
+#precio_producto{
+    color:red;
+    font-size: 12em;
+}
+#estado_producto{    
+    font-size: 8em;   
+}
+#descripcion_producto{
+    font-size: 3em;
+    color:#848484;
+    width: 390px;    
+    height: 200px;
+}
+
+.botonuser2 {
+    background: rgba(214,234,60,1);
+    background: -moz-linear-gradient(top, rgba(214,234,60,1) 0%, rgba(206,226,21,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(214,234,60,1)), color-stop(100%, rgba(206,226,21,1)));
+    background: -webkit-linear-gradient(top, rgba(214,234,60,1) 0%, rgba(206,226,21,1) 100%);
+    background: -o-linear-gradient(top, rgba(214,234,60,1) 0%, rgba(206,226,21,1) 100%);
+    background: -ms-linear-gradient(top, rgba(214,234,60,1) 0%, rgba(206,226,21,1) 100%);
+    background: linear-gradient(to bottom, rgba(214,234,60,1) 0%, rgba(206,226,21,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6ea3c', endColorstr='#cee215', GradientType=0 );
     
+    margin-right: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 240px;
+    height: 45px;
+    
+}
+
+
+
+
+.botonuser2:hover {
+    background: rgba(206,226,21,1);
+    background: -moz-linear-gradient(top, rgba(206,226,21,1) 0%, rgba(214,234,60,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(206,226,21,1)), color-stop(100%, rgba(214,234,60,1)));
+    background: -webkit-linear-gradient(top, rgba(206,226,21,1) 0%, rgba(214,234,60,1) 100%);
+    background: -o-linear-gradient(top, rgba(206,226,21,1) 0%, rgba(214,234,60,1) 100%);
+    background: -ms-linear-gradient(top, rgba(206,226,21,1) 0%, rgba(214,234,60,1) 100%);
+    background: linear-gradient(to bottom, rgba(206,226,21,1) 0%, rgba(214,234,60,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cee215', endColorstr='#d6ea3c', GradientType=0 );
+}
+
+.textoboton2 {
+    font-family: Arial;
+    font-style: normal;    
+    font-size: 1.3em;    
+    color: #2e2e2e;    
+    text-shadow: 0px 1px 0px #FFF;
+    
+}
+
+.textoboton2 span{
+    color:#aa13d8;
     
 }

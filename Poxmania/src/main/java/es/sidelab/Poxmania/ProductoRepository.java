@@ -8,6 +8,8 @@ public interface ProductoRepository extends CrudRepository<Producto, Long>  {
 	
 	List<Producto> findByNombre(String nombre);
 	
+	List<Producto> findByNombreContaining(String nombre);
+	
 	List<Producto> findByCategoria(String categoria);
 	
 	List<Producto> findByPrecioBetween(int preciomenor,int preciomayor);

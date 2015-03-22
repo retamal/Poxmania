@@ -57,5 +57,12 @@ public class ProductoController { //
 		return new ModelAndView("index").addObject("productos", productos);		
 	}
 	
+	@RequestMapping("/visualizar") 
+	public ModelAndView visualizar_producto(@RequestParam String elemento) {				
+		Producto productoaux = repository.findOne((long)Integer.parseInt(elemento));
+		return new ModelAndView("visualizar_producto").addObject("producto",productoaux);	
+	}
+	
+	
 
 }
