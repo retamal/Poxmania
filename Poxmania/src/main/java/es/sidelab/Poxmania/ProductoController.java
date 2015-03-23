@@ -33,7 +33,7 @@ public class ProductoController { //
 	public ModelAndView validacion(@RequestParam String	user,@RequestParam String pass) {
 				
 		if((user.equals("admin"))&&(Integer.parseInt(pass)==1234)){
-			System.out.println("CONTRASEÑA CORRECTA");
+			//System.out.println("CONTRASEÑA CORRECTA");
 			usuario.setAdmin(true);
 			return new ModelAndView("pantallaadministracion");	
 		}				

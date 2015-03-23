@@ -19,14 +19,14 @@ public class Producto {
 	private String imagen;
 	private String descripcion;
 	private int cantidad;
-	private int precio;
+	private float precio;
 	
 
 	protected Producto() {
 		// Used by SpringData
 	}
 
-	public Producto(String nombre, String categoria, String imagen, String descripcion, int cantidad,int precio) {
+	public Producto(String nombre, String categoria, String imagen, String descripcion, int cantidad,float precio) {
 		this.nombre = nombre;
 		this.categoria = categoria;
 		this.imagen=imagen;
@@ -75,11 +75,11 @@ public class Producto {
 		this.descripcion = descripcion;
 	}
 
-	public int getPrecio() {
+	public float getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(int precio) {
+	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
 

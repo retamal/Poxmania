@@ -57,15 +57,15 @@ public class AdminController { //
 	public ModelAndView comprobacionarticulo(@RequestParam String	nomp, @RequestParam String	catp, @RequestParam String	prep, @RequestParam String	canp, @RequestParam String	desp,@RequestParam MultipartFile imagen) {
 				
 		if(usuario.isAdmin()){			
-			System.out.println("PROBANDO");
+			//System.out.println("PROBANDO");
 			if(!nomp.isEmpty()&&!prep.isEmpty()&&!canp.isEmpty()&&!desp.isEmpty()){//comprobar que solo meto en la BD si tiene todos los datos
-				System.out.println("Nombre: "+nomp);
+				/*System.out.println("Nombre: "+nomp);
 				System.out.println("Categoria: "+catp);
-				System.out.println("Precio: "+Integer.parseInt(prep));
+				System.out.println("Precio: "+Float.parseFloat(prep));
 				System.out.println("Cantidad: "+Integer.parseInt(canp));
-				System.out.println("Descripcion: "+desp);
+				System.out.println("Descripcion: "+desp);*/
 				
-				Producto nuevoarticulo = new Producto(nomp,catp,"imagen",desp,Integer.parseInt(canp),Integer.parseInt(prep));
+				Producto nuevoarticulo = new Producto(nomp,catp,"imagen",desp,Integer.parseInt(canp),Float.parseFloat(prep));
 				
 				
 				repository.save(nuevoarticulo);	//meto para obtener el id			
@@ -133,20 +133,20 @@ public class AdminController { //
 	public ModelAndView comprobacionedicionarticulo(@RequestParam String	numid,@RequestParam String	nomp, @RequestParam String	catp, @RequestParam String	prep, @RequestParam String	canp, @RequestParam String	desp,@RequestParam MultipartFile imagen) {
 				
 		if(usuario.isAdmin()){			
-			System.out.println("PROBANDO");
+			//System.out.println("PROBANDO");
 			if(!nomp.isEmpty()&&!prep.isEmpty()&&!canp.isEmpty()&&!desp.isEmpty()){//comprobar que solo meto en la BD si tiene todos los datos
-				System.out.println("Nombre: "+nomp);
+			/*	System.out.println("Nombre: "+nomp);
 				System.out.println("Categoria: "+catp);
-				System.out.println("Precio: "+Integer.parseInt(prep));
+				System.out.println("Precio: "+Float.parseFloat(prep));
 				System.out.println("Cantidad: "+Integer.parseInt(canp));
 				System.out.println("Descripcion: "+desp);
 				System.out.println("ID: "+numid);
-			
+			*/
 				
 				Producto articuloparaeditar = repository.findOne((long)Integer.parseInt(numid));
 				
 				articuloparaeditar.setCantidad(Integer.parseInt(canp));
-				articuloparaeditar.setPrecio(Integer.parseInt(prep));
+				articuloparaeditar.setPrecio(Float.parseFloat(prep));
 				articuloparaeditar.setCategoria(catp);
 				articuloparaeditar.setDescripcion(desp);
 				articuloparaeditar.setNombre(nomp);

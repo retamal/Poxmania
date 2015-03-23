@@ -16,6 +16,8 @@ public class DataBaseUsage implements CommandLineRunner {
 
 	@Autowired
 	private ProductoRepository repository;
+	@Autowired
+	private Usuario usuario; //sesion de usuario por defecto admin es falso y cesta vacia
 	
 	Iterable<Producto> productos;
 
@@ -32,7 +34,7 @@ public class DataBaseUsage implements CommandLineRunner {
 		repository.save(new Producto("GameBoy Color","Videoconsolas","gameboy.jpg","Vuelve la clásica GameBoy Color. Color morado transparente. Disfruta de los juegos de siempre.",6,40));
 		repository.save(new Producto("Nevera Fagor T-103","Electrodomesticos","fagor.jpg","Nevera Fagor T-103 No-Frost de 3 puertas. Conserva los alimentos ahorrando luz.",6,380));
 		repository.save(new Producto("N-Gage QD","Videoconsolas","ngage.jpg","Nokia renace como el ave fénix con su nuevo teléfono-videoconsola. Pantalla a color capaz de mover los juegos más exigentes del mercado.",3,160));
-			*/
+		*/
 	
 	}
 	
