@@ -18,6 +18,7 @@
 <body>
 
 	<div id="cabecera">
+	<div id="parte1">
 		<a href="/" style="text-decoration: none">
 			<div id="logo"></div>
 		</a>
@@ -54,7 +55,8 @@
 				</div>
 			</a>
 		</div>
-
+	</div> <!--parte1-->
+	<div id="parte2">
 		<nav id="menuprincipal" class="navbar navbar-default">
 			<div class="container-fluid">
 
@@ -101,12 +103,7 @@
 				</div>
 			</div>
 		</nav>
-
-		<!--       <div align="center" id="tablaProductos">
-        	<tr th:each="producto it : ${productos}">
-    			<a th:href="@{'/poneranuncio?var='+${it.count}}"><span th:text="${producto.nombre}">Nombre </span><b>/</b><span th:text="${producto.categoria}">Categoria </span><b>/</b><span th:text="${producto.imagen}">Imagen </span><b>/</b><span th:text="${producto.descripcion}">Descripcion </span><b>/</b><span th:text="${producto.cantidad}">Cantidad </span><b>/</b><span th:text="${producto.precio}">Precio </span></a><br></br>		
-			</tr>
-        </div>-->
+	</div> <!--parte2-->		
 	</div>
 
 	<div align="center" id="tablaProductos">

@@ -41,7 +41,7 @@ public class DataBaseUsage implements CommandLineRunner {
 	@RequestMapping("/buscarprecio")
 	public ModelAndView porprecio(@RequestParam String min,@RequestParam String max) {
 		if(!min.isEmpty()&&!max.isEmpty()){
-			productos = repository.findByPrecioBetween(Integer.parseInt(min), Integer.parseInt(max));										
+			productos = repository.findByPrecioBetween(Float.parseFloat(min), Float.parseFloat(max));										
 			return new ModelAndView("index").addObject("productos", productos);
 		}else{
 			productos = repository.findAll();										

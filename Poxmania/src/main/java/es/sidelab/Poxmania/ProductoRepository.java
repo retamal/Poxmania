@@ -12,6 +12,6 @@ public interface ProductoRepository extends CrudRepository<Producto, Long>  {
 	
 	List<Producto> findByCategoria(String categoria);
 	
-	List<Producto> findByPrecioBetween(int preciomenor,int preciomayor);
+	List<Producto> findByPrecioBetween(float preciomenor,float preciomayor);
 
 }

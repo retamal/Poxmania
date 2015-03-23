@@ -10,7 +10,7 @@
 
 #cabecera {
     background-color: #fff;
-    height: 85px;
+    
     -webkit-box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
     -moz-box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
     box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
@@ -31,7 +31,7 @@
 	float:left;
     margin-top: 10px;
     border-radius: 4px;
-    
+    margin-right:20px;
     background-color: rgba(212, 212, 212, 0.69);
     display: inline-block;
     margin-bottom: 6px;
@@ -156,8 +156,8 @@
 }
 
 #botonesusuario {
-    margin-left: 25px;
-    
+    margin-right: 15px;
+    float:right;
     
     position: relative;
     display: inline-block;
@@ -197,9 +197,7 @@
     background-color: white;
     border: 0px;
     padding-bottom: 15px;
-    -webkit-box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
-    -moz-box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
-    box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
+
 }
 
 .container-fluid {
@@ -229,7 +227,7 @@
 /************ TABLAS DE PRODUCTOS ***************/
 
 #tablaProductos {
-    margin-top: 65px;
+    margin-top: 45px;
 }
 
 table {
@@ -383,6 +381,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb645', end
     background-image: url(../img/poxmanialogo2.png);
     display: inline-block;
     position: relative;
+    float:left;
 }
 
 #contenedoradmin{
@@ -614,4 +613,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb645', end
     height: auto;
     width: 70px;
     height: 30px;
+    float:right;
+    margin-right:10px;
+    font-size:18em;
+}
+
+#boton4:hover{
+	background: #bf3288;
+	color:#d8eb3f;
+	text-shadow: none;
+}
+  
+/***** ARREGLOS PARA HACERLOS RESPONSIVE ******/
+
+#parte2{
+	display:inline-block;
+}
+
+#cabeceraAdmin{
+	background-color: #fff;
+    
+    -webkit-box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
+    box-shadow: -1px 9px 27px -11px rgba(0, 0, 0, 0.22);
+    height:85px;
+    margin-bottom:50px;
 }

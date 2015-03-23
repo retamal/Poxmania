@@ -13,78 +13,94 @@
 
 <body>
 
-    <div id="cabecera">
-    	<a href="/" style="text-decoration:none">
-        <div id="logo"></div>
-        </a>
-        <div id="formulario">
-            <form class="navbar-form navbar-left" role="search" action="buscarnombre">
-                <div class="form-group">
-                    <span class="glyphicon glyphicon-search" aria-hidden="true" id="iconolupa"></span>
-                    <input type="text" name="textoabuscar" class="form-control" placeholder="¿Qué deseas buscar?" id="campotexto"></input>
-                </div>
-                <button type="submit" class="btn btn-default" id="botonbuscar">Buscar</button>
-            </form>
-
-            <form class="navbar-form navbar-left" role="search" action="buscarprecio">
-                <div class="form-group">
-                    <input type="text" class="form-control camponumero" name="min" placeholder="Desde"></input>
-                    <input type="text" class="form-control camponumero" name="max" placeholder="Hasta"></input>
-                </div>
-                <button type="submit" class="btn btn-default" id="botonbuscar2">Buscar</button>
-            </form>
-        </div>
-        <div id="botonesusuario">
-            <a class="btn  botonuser" href="acceso" role="button">
-                <div class="textoboton"><span class="glyphicon glyphicon-user iconoboton"></span>Mi cuenta</div>
-            </a>
-            <a class="btn  botonuser" href="#" role="button">
-                <div class="textoboton"><span class="glyphicon glyphicon-shopping-cart iconoboton"></span>Cesta</div>
-            </a>
-        </div>
-
-        <nav id="menuprincipal" class="navbar navbar-default">
-            <div class="container-fluid">
-
-
-                <div class="btn-group">
-                	<a href="/" style="text-decoration:none">
-                    <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
-                        <span class="glyphicon glyphicon-home iconoboton" id="casita"></span>
-                    </button>
-                    </a>
-                </div>
-                <div class="btn-group">
-                	<a href="/categorias?cat=Electrodomesticos" style="text-decoration:none">
-                    <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
-                        Pequeños electrodomésticos
-                    </button>
-                    </a>
-                </div>
-                <div class="btn-group">
-                	<a href="/categorias?cat=Televisiones" style="text-decoration:none">
-                    <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
-                        Televisiones
-                    </button>
-                    </a>
-                </div>
-                <div class="btn-group">
-                	<a href="/categorias?cat=Informatica" style="text-decoration:none">
-                    <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
-                        Informática
-                    </button>
-                    </a>
-                </div>
-                <div class="btn-group">
-                	<a href="/categorias?cat=Videoconsolas" style="text-decoration:none">
-                    <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
-                        Videoconsolas
-                    </button>
-                    </a>
-                </div>
-            </div>
-        </nav>        
-    </div>
+	<div id="cabecera">
+	<div id="parte1">
+		<a href="/" style="text-decoration: none">
+			<div id="logo"></div>
+		</a>
+		<div id="formulario">
+			<form class="navbar-form navbar-left" role="search"
+				action="buscarnombre">
+				<div class="form-group">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"
+						id="iconolupa"></span> <input type="text" name="textoabuscar"
+						class="form-control" placeholder="¿Qué deseas buscar?"
+						id="campotexto"></input>
+				</div>
+				<button type="submit" class="btn btn-default" id="botonbuscar">Buscar</button>
+			</form>
+	
+			<form class="navbar-form navbar-left" role="search"
+				action="buscarprecio">
+				<div class="form-group">
+					<input type="text" class="form-control camponumero" name="min"
+						placeholder="Desde"></input> <input type="text"
+						class="form-control camponumero" name="max" placeholder="Hasta"></input>
+				</div>
+				<button type="submit" class="btn btn-default" id="botonbuscar2">Buscar</button>
+			</form>
+		</div>
+		<div id="botonesusuario">
+			<a class="btn  botonuser" href="acceso" role="button">
+				<div class="textoboton">
+					<span class="glyphicon glyphicon-user iconoboton"></span>Mi cuenta
+				</div>
+			</a> <a class="btn  botonuser" href="#" role="button">
+				<div class="textoboton">
+					<span class="glyphicon glyphicon-shopping-cart iconoboton"></span>Cesta
+				</div>
+			</a>
+		</div>
+	</div> <!--parte1-->
+	<div id="parte2">
+		<nav id="menuprincipal" class="navbar navbar-default">
+			<div class="container-fluid">
+	
+	
+				<div class="btn-group">
+					<a href="/" style="text-decoration: none">
+						<button type="button"
+							class="btn btn-default dropdown-toggle botonbarra"
+							aria-expanded="false">
+							<span class="glyphicon glyphicon-home iconoboton" id="casita"></span>
+						</button>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a href="/categorias?cat=Electrodomesticos"
+						style="text-decoration: none">
+						<button type="button"
+							class="btn btn-default dropdown-toggle botonbarra"
+							aria-expanded="false">Pequeños electrodomésticos</button>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a href="/categorias?cat=Televisiones"
+						style="text-decoration: none">
+						<button type="button"
+							class="btn btn-default dropdown-toggle botonbarra"
+							aria-expanded="false">Televisiones</button>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a href="/categorias?cat=Informatica" style="text-decoration: none">
+						<button type="button"
+							class="btn btn-default dropdown-toggle botonbarra"
+							aria-expanded="false">Informática</button>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a href="/categorias?cat=Videoconsolas"
+						style="text-decoration: none">
+						<button type="button"
+							class="btn btn-default dropdown-toggle botonbarra"
+							aria-expanded="false">Videoconsolas</button>
+					</a>
+				</div>
+			</div>
+		</nav>
+	</div> <!--parte2-->		
+	</div>
     
     
     <div id="contenedor_producto">
