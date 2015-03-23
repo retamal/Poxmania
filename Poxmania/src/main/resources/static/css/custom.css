@@ -242,7 +242,7 @@ table {
     border: 1px solid #b9b9b9;
     display: inline-block;
     width: 300px;
-    height: 500px;
+    height: 550px;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -305,12 +305,11 @@ table {
     margin: 5;
     padding: 0;
     position: relative;
-    text-align: right;
+    text-align: left;
     color: #eb0b2b;
     font-size: 30px;
     display: inline-block;
     font-weight: bold;
-  
 }
 
 /******* ACCESO *******/
@@ -594,4 +593,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb645', end
 .textoboton2 span{
     color:#aa13d8;
     
+}
+
+/*********PRUEBA DAVID PARA BOTON DENTRO DE CADA PRODUCTO*********/
+
+#boton4{
+    color: #bf3288;
+    background: #d8eb3f;
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#d8eb3f),color-stop(1,#cbe213));
+    background: -webkit-linear-gradient(top,#d8eb3f 0,#cbe213 100%);
+    background: -moz-linear-gradient(top,#d8eb3f 0,#cbe213 100%);
+    background: -o-linear-gradient(top,#d8eb3f 0,#cbe213 100%);
+    background: -ms-linear-gradient(top,#d8eb3f 0,#cbe213 100%);
+    background: linear-gradient(top,#d8eb3f 0,#cbe213 100%);
+    background: -o-linear-gradient(top,#d8eb3f 0,#cbe213 100%);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.6),0 1px 0 rgba(255,255,255,.8);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.6),0 1px 0 rgba(255,255,255,.8);
+    border: 1px solid #cbe213;
+    text-shadow: 0 1px 0 #fff;
+    height: auto;
+    width: 70px;
+    height: 30px;
 }

@@ -1,109 +1,139 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8" />
+<meta charset="UTF-8" />
 
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"></link>
-    <title>Poxmania</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link
+	href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+	rel="stylesheet"></link>
+<title>Poxmania</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script
+	src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-    <link type="text/css" rel="stylesheet" href='css/custom.css'></link>
+<link type="text/css" rel="stylesheet" href='css/custom.css'></link>
 </head>
 
 <body>
 
-    <div id="cabecera">
-    	<a href="/" style="text-decoration:none">
-        <div id="logo"></div>
-        </a>
-        <div id="formulario">
-            <form class="navbar-form navbar-left" role="search" action="buscarnombre">
-                <div class="form-group">
-                    <span class="glyphicon glyphicon-search" aria-hidden="true" id="iconolupa"></span>
-                    <input type="text" name="textoabuscar" class="form-control" placeholder="¿Qué deseas buscar?" id="campotexto"></input>
-                </div>
-                <button type="submit" class="btn btn-default" id="botonbuscar">Buscar</button>
-            </form>
+	<div id="cabecera">
+		<a href="/" style="text-decoration: none">
+			<div id="logo"></div>
+		</a>
+		<div id="formulario">
+			<form class="navbar-form navbar-left" role="search"
+				action="buscarnombre">
+				<div class="form-group">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"
+						id="iconolupa"></span> <input type="text" name="textoabuscar"
+						class="form-control" placeholder="¿Qué deseas buscar?"
+						id="campotexto"></input>
+				</div>
+				<button type="submit" class="btn btn-default" id="botonbuscar">Buscar</button>
+			</form>
 
-            <form class="navbar-form navbar-left" role="search" action="buscarprecio">
-                <div class="form-group">
-                    <input type="text" class="form-control camponumero" name="min" placeholder="Desde"></input>
-                    <input type="text" class="form-control camponumero" name="max" placeholder="Hasta"></input>
-                </div>
-                <button type="submit" class="btn btn-default" id="botonbuscar2">Buscar</button>
-            </form>
-        </div>
-        <div id="botonesusuario">
-            <a class="btn  botonuser" href="acceso" role="button">
-                <div class="textoboton"><span class="glyphicon glyphicon-user iconoboton"></span>Mi cuenta</div>
-            </a>
-            <a class="btn  botonuser" href="#" role="button">
-                <div class="textoboton"><span class="glyphicon glyphicon-shopping-cart iconoboton"></span>Cesta</div>
-            </a>
-        </div>
+			<form class="navbar-form navbar-left" role="search"
+				action="buscarprecio">
+				<div class="form-group">
+					<input type="text" class="form-control camponumero" name="min"
+						placeholder="Desde"></input> <input type="text"
+						class="form-control camponumero" name="max" placeholder="Hasta"></input>
+				</div>
+				<button type="submit" class="btn btn-default" id="botonbuscar2">Buscar</button>
+			</form>
+		</div>
+		<div id="botonesusuario">
+			<a class="btn  botonuser" href="acceso" role="button">
+				<div class="textoboton">
+					<span class="glyphicon glyphicon-user iconoboton"></span>Mi cuenta
+				</div>
+			</a> <a class="btn  botonuser" href="#" role="button">
+				<div class="textoboton">
+					<span class="glyphicon glyphicon-shopping-cart iconoboton"></span>Cesta
+				</div>
+			</a>
+		</div>
 
-        <nav id="menuprincipal" class="navbar navbar-default">
-            <div class="container-fluid">
+		<nav id="menuprincipal" class="navbar navbar-default">
+			<div class="container-fluid">
 
 
-                <div class="btn-group">
-                	<a href="/" style="text-decoration:none">
-                    <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
-                        <span class="glyphicon glyphicon-home iconoboton" id="casita"></span>
-                    </button>
-                    </a>
-                </div>
-                <div class="btn-group">
-                	<a href="/categorias?cat=Electrodomesticos" style="text-decoration:none">
-                    <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
-                        Pequeños electrodomésticos
-                    </button>
-                    </a>
-                </div>
-                <div class="btn-group">
-                	<a href="/categorias?cat=Televisiones" style="text-decoration:none">
-                    <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
-                        Televisiones
-                    </button>
-                    </a>
-                </div>
-                <div class="btn-group">
-                	<a href="/categorias?cat=Informatica" style="text-decoration:none">
-                    <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
-                        Informática
-                    </button>
-                    </a>
-                </div>
-                <div class="btn-group">
-                	<a href="/categorias?cat=Videoconsolas" style="text-decoration:none">
-                    <button type="button" class="btn btn-default dropdown-toggle botonbarra" aria-expanded="false">
-                        Videoconsolas
-                    </button>
-                    </a>
-                </div>
-            </div>
-        </nav>
+				<div class="btn-group">
+					<a href="/" style="text-decoration: none">
+						<button type="button"
+							class="btn btn-default dropdown-toggle botonbarra"
+							aria-expanded="false">
+							<span class="glyphicon glyphicon-home iconoboton" id="casita"></span>
+						</button>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a href="/categorias?cat=Electrodomesticos"
+						style="text-decoration: none">
+						<button type="button"
+							class="btn btn-default dropdown-toggle botonbarra"
+							aria-expanded="false">Pequeños electrodomésticos</button>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a href="/categorias?cat=Televisiones"
+						style="text-decoration: none">
+						<button type="button"
+							class="btn btn-default dropdown-toggle botonbarra"
+							aria-expanded="false">Televisiones</button>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a href="/categorias?cat=Informatica" style="text-decoration: none">
+						<button type="button"
+							class="btn btn-default dropdown-toggle botonbarra"
+							aria-expanded="false">Informática</button>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a href="/categorias?cat=Videoconsolas"
+						style="text-decoration: none">
+						<button type="button"
+							class="btn btn-default dropdown-toggle botonbarra"
+							aria-expanded="false">Videoconsolas</button>
+					</a>
+				</div>
+			</div>
+		</nav>
 
-        <!--       <div align="center" id="tablaProductos">
+		<!--       <div align="center" id="tablaProductos">
         	<tr th:each="producto it : ${productos}">
     			<a th:href="@{'/poneranuncio?var='+${it.count}}"><span th:text="${producto.nombre}">Nombre </span><b>/</b><span th:text="${producto.categoria}">Categoria </span><b>/</b><span th:text="${producto.imagen}">Imagen </span><b>/</b><span th:text="${producto.descripcion}">Descripcion </span><b>/</b><span th:text="${producto.cantidad}">Cantidad </span><b>/</b><span th:text="${producto.precio}">Precio </span></a><br></br>		
 			</tr>
         </div>-->
-    </div>
+	</div>
 
-    <div align="center" id="tablaProductos">
-        <div class="espacioproducto" th:each="producto : ${productos}">
-        	<a th:href="@{'/visualizar?elemento='+${producto.id}}" style="text-decoration:none">
-            <div class="imagenproducto container"><img width="298" height="298" th:src="@{'image/'+${producto.imagen}}"></img></div>
-            <div class="textoproducto">
-                <div class="nombreproducto container" th:text="${producto.nombre}">nombrepruebaquenodebeverse</div>
-                <div class="descripcionproducto container" th:text="${producto.descripcion}">descripcionwachi</div>
-                <div class="precioproducto container" th:text="${producto.precio}+ €">preciocaro</div>
-            </div>
-            </a>
-        </div>
-    </div>
+	<div align="center" id="tablaProductos">
+		<div class="espacioproducto" th:each="producto : ${productos}">
+			<a th:href="@{'/visualizar?elemento='+${producto.id}}"
+				style="text-decoration: none">
+				<div class="imagenproducto container">
+					<img width="298" height="298"
+						th:src="@{'image/'+${producto.imagen}}"></img>
+				</div>
+				<div class="textoproducto">
+					<div class="nombreproducto container" th:text="${producto.nombre}">nombrepruebaquenodebeverse</div>
+					<div class="descripcionproducto container"
+						th:text="${producto.descripcion}">descripcionwachi</div>
+					<div class="precioproducto container"
+						th:text="${producto.precio}+ €">preciocaro</div>
+				</div> 
+				<a th:href="@{'/metercesta?elemento='+${producto.id}}" role="button">
+						<c:if test="${producto.getCantidad()> 0 }">
+							<button id="boton4" class="btn btn-block" name="boton" type="submit">
+								<i class='glyphicon glyphicon-shopping-cart'></i>
+							</button>
+						</c:if>
+					</a>
+			</a>
+		</div>
+	</div>
 
 
 
