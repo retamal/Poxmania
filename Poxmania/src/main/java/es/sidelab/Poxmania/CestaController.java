@@ -27,6 +27,27 @@ public class CestaController { //
 	
 	Iterable<Producto> productos;
 	
+	@RequestMapping("/anadir_producto_cesta") //borrar un articulo
+	public ModelAndView anadir_producto_cesta(@RequestParam String id) {
+				
+		System.out.println("PRUEBAAARL");
+		
+		Producto prodaux = repository.findOne(Long.parseLong(id));
+		
+		usuario.getMiCesta().anadirProducto(prodaux);;
+		System.out.println(usuario.getMiCesta().getPrecio());
+		
+		
+		productos = repository.findAll(); // cada vez que se recargue carga		
+		return new ModelAndView("index").addObject("productos", productos);			
+	}
+	
+	@RequestMapping("/micesta") //borrar un articulo
+	public ModelAndView micesta() {
+				
+		
+		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta());			
+	}
 	
 	
 
