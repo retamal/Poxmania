@@ -45,7 +45,7 @@
 				<div class="textoboton">
 					<span class="glyphicon glyphicon-user iconoboton"></span>Mi cuenta
 				</div>
-			</a> <a class="btn  botonuser" href="#" role="button">
+			</a> <a class="btn  botonuser" href="/micesta" role="button">
 				<div class="textoboton">
 					<span class="glyphicon glyphicon-shopping-cart iconoboton"></span>Cesta
 				</div>
@@ -114,7 +114,7 @@
 		    </div>
 		    <div id="descripcion_producto" th:text="${producto.descripcion}">Descripcion_del_producto</div>	    	
 	    	
-	    	<a class="btn  botonuser2" th:href="@{'/metercesta?elemento='+${producto.id}}" role="button">
+	    	<a class="btn  botonuser2" th:href="@{'/anadir_producto_cesta?id='+${producto.id}}" role="button">
 	    	<div class="textoboton2"><span class="glyphicon glyphicon-shopping-cart iconoboton"></span>Añadir a la cesta</div>
 	        </a>
 	    </div>
