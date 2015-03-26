@@ -30,16 +30,41 @@ public class CestaController { //
 	@RequestMapping("/anadir_producto_cesta") //borrar un articulo
 	public ModelAndView anadir_producto_cesta(@RequestParam String id) {
 				
-		System.out.println("PRUEBAAARL");
+		
 		
 		Producto prodaux = repository.findOne(Long.parseLong(id));
 		
 		usuario.getMiCesta().anadirProducto(prodaux);;
-		System.out.println(usuario.getMiCesta().getPrecio());
 		
 		
-		productos = repository.findAll(); // cada vez que se recargue carga		
-		return new ModelAndView("index").addObject("productos", productos);			
+		
+		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta());			
+	}
+	
+	@RequestMapping("/eliminar_producto_cesta") //borrar un articulo
+	public ModelAndView eliminar_producto_cesta(@RequestParam String id) {
+				
+		
+		
+		Producto prodaux = repository.findOne(Long.parseLong(id));
+		
+		usuario.getMiCesta().eliminarProducto(prodaux);
+		
+		
+		
+		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta());			
+	}
+	
+	@RequestMapping("/disminuir_producto_cesta") //borrar un articulo
+	public ModelAndView disminuir_producto_cesta(@RequestParam String id) {
+				
+		
+		
+		Producto prodaux = repository.findOne(Long.parseLong(id));
+		
+		usuario.getMiCesta().disminuirProducto(prodaux);		
+		
+		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta());			
 	}
 	
 	@RequestMapping("/micesta") //borrar un articulo

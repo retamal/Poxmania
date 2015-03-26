@@ -71,7 +71,46 @@ public class Cesta {
 		
 	}
 	
-	public void eliminarProducto(long idAbuscar,int cantidad){
+	/*****/
+	public void eliminarProducto(Producto nuevoProducto){ /*elimina completamente el producto de la cesta*/	
+		
+		for (Articulo articulo:cestaCompra){	//comprobar si esta metido ya		
+			if (articulo.getId()==nuevoProducto.getId()){ //si existe actualizo cantidad
+				num_productos-=articulo.getCantidad();
+				precio-=articulo.getCantidad()*articulo.getPrecio();
+				cestaCompra.remove(articulo);
+				break;//una vez eliminado salgo del for pa que no casque
+			}
+		}			
+	}
+	/*eliminar alternativo*/
+	
+	public void disminuirProducto(Producto nuevoProducto){
+		/*para tener una sola operacion, si la cantidad es -1 elimina el producto, en otro caso resta la cantidad*/
+		
+		for (Articulo articulo:cestaCompra){	//comprobar si esta metido ya		
+			if (articulo.getId()==nuevoProducto.getId()){ //si existe actualizo cantidad
+				articulo.setCantidad(articulo.getCantidad()-1);
+				precio-=articulo.getPrecio();
+				num_productos-=1;
+				if(articulo.getCantidad()==0){//si al disminuir es 0, lo elimino de la lista y acabo
+					cestaCompra.remove(articulo);
+					break;				
+				}else if(articulo.getCantidad()>nuevoProducto.getCantidad()){//si al actualizar la cantidad resulta que alguien ha comprado el mismo producto y ya no dispongo de ese stock, ajusto la cantidad de articulos a la maxima posible que pueda comprar
+					int diferencia =  articulo.getCantidad()-nuevoProducto.getCantidad() ;
+					precio-=diferencia*articulo.getPrecio();
+					articulo.setCantidad(nuevoProducto.getCantidad());
+					num_productos-=diferencia;
+					break;
+				}
+				break; //si ya encontro la id no necesito mas iteraciones del for
+			}
+		}	
+		
+	}
+	
+	
+	public void disminuirProducto(long idAbuscar,int cantidad){
 		/*para tener una sola operacion, si la cantidad es -1 elimina el producto, en otro caso resta la cantidad*/
 		
 		Producto prodcompr= repository.findOne(idAbuscar);

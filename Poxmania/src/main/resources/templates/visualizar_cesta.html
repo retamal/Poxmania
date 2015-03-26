@@ -98,11 +98,17 @@
             	<div class="seccion_cesta_control">
             		<div class="cesta_precio_articulo" th:text="${articulo.precio}*${articulo.cantidad}+' €'">precionodebesalir</div>
             		<div class="cesta_cantidad_controlador">
-            			<div class="cesta_menos"><span class="glyphicon glyphicon-minus"></span></div>
+            			<a th:href="@{'/disminuir_producto_cesta?id='+${articulo.id}}" role="button">
+            				<div class="cesta_menos"><span class="glyphicon glyphicon-minus"></span></div>
+            			</a>
             			<div class="cesta_cantidad" th:text="${articulo.cantidad}">nodebesalir</div>
-            			<div class="cesta_mas"><span class="glyphicon glyphicon-plus"></span></div>            		
+            			<a th:href="@{'/anadir_producto_cesta?id='+${articulo.id}}" role="button">
+            				<div class="cesta_mas"><span class="glyphicon glyphicon-plus"></span></div>
+            			</a>            		
             		</div>
-            		<div class="cesta_eliminar_articulo"><span>x eliminar</span></div>            	
+            		<a th:href="@{'/eliminar_producto_cesta?id='+${articulo.id}}" role="button">
+            			<div class="cesta_eliminar_articulo"><span>x eliminar</span></div> 
+            		</a>           	
             	</div> 
             </div>
         </div>
