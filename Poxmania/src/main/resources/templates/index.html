@@ -121,13 +121,20 @@
 					<div class="precioproducto container"
 						th:text="${producto.precio}+ €">preciocaro</div>
 				</div> 
-				<a th:href="@{'/anadir_producto_cesta?id='+${producto.id}}" role="button">
-						<c:if test="${producto.getCantidad()> 0 }">
-							<button id="boton4" class="btn btn-block" name="boton" type="submit">
-								<i class='glyphicon glyphicon-shopping-cart'></i>
-							</button>
-						</c:if>
-					</a>
+				<!-- <a th:href="@{'/anadir_producto_cesta?id='+${producto.id}}" role="button">
+					<c:if test="${producto.getCantidad()> 0 }">
+						<button id="boton4" class="btn btn-block" name="boton" type="submit">
+							<i class='glyphicon glyphicon-shopping-cart'></i>
+						</button>
+					</c:if>
+				</a> -->
+					
+				<a th:href="@{'/anadir_producto_cesta?id='+${producto.id}}" role="button"
+					th:if="${producto.getCantidad()>0}">
+					<button id="boton4" class="btn btn-block" name="boton" type="submit">
+						<i class='glyphicon glyphicon-shopping-cart'></i>
+					</button>
+				</a>
 			</a>
 		</div>
 	</div>
