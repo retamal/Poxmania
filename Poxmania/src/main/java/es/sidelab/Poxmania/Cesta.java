@@ -48,16 +48,18 @@ public class Cesta {
 		
 	
 		//Producto nuevoProducto = repository.findOne(nuevoProducto2.getId());//tener siempre actualizada la cantidad de productos con la bd para evitar problemas de compra simultanea ;)
-				
+		boolean limite=false;	
 		boolean metido=false;
 		for (Articulo articulo:cestaCompra){	//comprobar si esta metido ya		
 			if ((articulo.getId()==nuevoProducto.getId())&&(articulo.getCantidad()<nuevoProducto.getCantidad())){ //si existe actualizo cantidad
 				articulo.setCantidad(articulo.getCantidad()+1);
 				metido=true;
-			}			
+			}else if ((articulo.getId()==nuevoProducto.getId())&&(articulo.getCantidad()>=nuevoProducto.getCantidad())){
+				limite=true; //para evitar que meta articulos si ya esta en el tope de stock
+			}
 		}
 		
-		if ((!metido)&&(nuevoProducto.getCantidad()>=1)){ //si no esta en la cesta y hay cantidad disponible
+		if ((!metido)&&(nuevoProducto.getCantidad()>=1)&&(!limite)){ //si no esta en la cesta y hay cantidad disponible
 			cestaCompra.add(new Articulo(nuevoProducto.getId(),nuevoProducto.getNombre(),1,nuevoProducto.getPrecio()));
 			metido=true;
 		}
