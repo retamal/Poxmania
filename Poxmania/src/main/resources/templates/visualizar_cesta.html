@@ -91,9 +91,25 @@
     <div id="contenedor_cesta">
         <div id="contenedor_productos_comprados">
             <div class="producto_cesta" th:each="articulo : ${cesta.getCestaCompra()}">
-                <div th:text="${articulo.nombre}">nodebemostrarse</div>
-                <div th:text="${articulo.cantidad}">nodebemostrarse</div>
-                <div th:text="${articulo.precio}">nodebemostrarse</div>
+            	<div class="seccion_cesta_imagen"></div>
+            	<div class="seccion_cesta_descripcion" th:text="${articulo.nombre}">
+            	nodebemostrarse
+            	</div>
+            	<div class="seccion_cesta_control">
+            		<div class="cesta_precio_articulo" th:text="${articulo.precio}*${articulo.cantidad}+' €'">precionodebesalir</div>
+            		<div class="cesta_cantidad_controlador">
+            			<a th:href="@{'/disminuir_producto_cesta?id='+${articulo.id}}" role="button">
+            				<div class="cesta_menos"><span class="glyphicon glyphicon-minus"></span></div>
+            			</a>
+            			<div class="cesta_cantidad" th:text="${articulo.cantidad}">nodebesalir</div>
+            			<a th:href="@{'/anadir_producto_cesta?id='+${articulo.id}}" role="button">
+            				<div class="cesta_mas"><span class="glyphicon glyphicon-plus"></span></div>
+            			</a>            		
+            		</div>
+            		<a th:href="@{'/eliminar_producto_cesta?id='+${articulo.id}}" role="button">
+            			<div class="cesta_eliminar_articulo"><span>x eliminar</span></div> 
+            		</a>           	
+            	</div> 
             </div>
         </div>
         <div id="contenedor_resumen_cesta">
@@ -101,9 +117,18 @@
                 <div class=""><span class="glyphicon glyphicon-shopping-cart iconoboton"></span>Hacer mi pedido</div>
             </a>
 
-            <h1>TOTAL CESTA</h1>
-            <div th:text="${cesta.precio}+' €'">totalnodebesalir</div>
-            <div th:text="${cesta.num_productos}">totalnodebesalir</div>
+			<table id="tabla_resumen_cesta">
+				<tr>
+					<td class="nombre_resumen_compra">Precio total</td>
+					<td id="precio_resumen_cesta" th:text="${cesta.precio}+' €'">nodebesalir</td>
+				</tr>
+				<tr>
+					<td class="nombre_resumen_compra">Nº articulos</td>
+					<td id="cantidad_resumen_cesta" th:text="${cesta.num_productos}+' artículos'">nodebesalir</td>
+				</tr>
+				
+			</table>
+            
         </div>
 
 
