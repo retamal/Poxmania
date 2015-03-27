@@ -6,11 +6,11 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ContenidoPedidoRepository extends CrudRepository<ContenidoPedido, Long>  {
 	
-	List<Pedido> findByIdArticulo(long idArticulo);
+	List<ContenidoPedido> findByIdArticulo(long idArticulo);
 	
-	List<Pedido> findByIdPedido(long idPedido);	
+	List<ContenidoPedido> findByIdPedido(long idPedido);	
 	
-	List<Pedido> findById(long id);
+	List<ContenidoPedido> findById(long id);
 	
 	
 

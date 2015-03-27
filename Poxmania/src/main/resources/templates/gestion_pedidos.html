@@ -1,0 +1,57 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"></link>
+    <title>Poxmania</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href='css/custom.css'></link>
+</head>
+
+<body>
+
+	<div id="cabeceraAdmin">
+		<div id="parte1">
+			<a href="/acceso" style="text-decoration: none">
+				<div id="logoadmin"></div>
+			</a>
+			
+			<div id="botonesusuario">
+				<a class="btn  botonuser" href="desconectar" role="button">
+					<div class="textoboton">
+						<span class="glyphicon glyphicon-user iconoboton"></span>Salir
+					</div>
+				</a>
+			</div>
+		</div> <!--parte1-->		
+	</div>
+       
+
+        
+    
+    <div id="contenedoradmin">   	
+    	<table id="tablaadmin_pedidos">
+    		<tr class="filaproducto" th:each="pedido:${pedidos}">
+    			<td class="columnaid" th:text="${pedido.id}">ID</td>
+    			<td class="columnacat" style="background-color: rgb(44, 184, 115);color:white" th:if="${pedido.isPreparado()}" >Preparado</td>
+    			<td class="columnacat" style="background-color: rgb(255, 123, 123);color:white" th:if="${!pedido.isPreparado()}" >No Preparado</td>
+    			<td class="columnacat" th:text="${pedido.nombreCliente}">Nom</td>
+    			<td class="columnacat" th:text="${pedido.apellidos}">Ape</td>    			
+    			<td class="columnaedicion2" ><a th:href="@{'/examinar?elemento='+${pedido.id}}" style="text-decoration:none;color:white">Visualizar</a></td>
+    			<td class="columnaedicion2" ><a th:href="@{'/preparar?elemento='+${pedido.id}}" style="text-decoration:none;color:white">Marcar Preparado</a></td>
+    		</tr>
+    	</table>	    
+       
+    </div>
+   
+
+
+
+
+
+</body>
+
+</html>

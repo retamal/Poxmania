@@ -88,7 +88,7 @@ public class CestaController { //
 		
 		
 		for (Articulo articulo:usuario.getMiCesta().getCestaCompra()){
-			repositoryContenidoPedidos.save(new ContenidoPedido(nuevoPedido.getId(),articulo.getId(),articulo.getCantidad()));//id pedido id articulo cantidad
+			repositoryContenidoPedidos.save(new ContenidoPedido(nuevoPedido.getId(),articulo.getId(),articulo.getCantidad(),articulo.getNombre()));//id pedido id articulo cantidad
 		}		
 		
 		usuario.vaciarCesta(); //borra la cesta del usuario		

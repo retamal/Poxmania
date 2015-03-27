@@ -15,6 +15,7 @@ public class ContenidoPedido {
 	private long id;
 
 	private long idArticulo;
+	private String nombreArticulo;
 	private int cantidadArticulo;
 	private long idPedido;
 	
@@ -24,10 +25,21 @@ public class ContenidoPedido {
 		// Used by SpringData
 	}
 
-	public ContenidoPedido(long idPedido,long idArticulo,int cantidadArticulo) {
+	public ContenidoPedido(long idPedido,long idArticulo,int cantidadArticulo,String nombreArticulo) {
 		this.idPedido = idPedido;
 		this.idArticulo = idArticulo;		
-		this.cantidadArticulo=cantidadArticulo;			
+		this.cantidadArticulo=cantidadArticulo;	
+		this.nombreArticulo=nombreArticulo;
+	}
+
+		
+	
+	public String getNombreArticulo() {
+		return nombreArticulo;
+	}
+
+	public void setNombreArticulo(String nombreArticulo) {
+		this.nombreArticulo = nombreArticulo;
 	}
 
 	public long getId() {

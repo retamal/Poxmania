@@ -27,6 +27,12 @@ public class AdminController { //
 	private ProductoRepository repository;
 	private static final String FILES_FOLDER = "files";
 	
+	@Autowired
+	private PedidoRepository repositoryPedidos;
+	
+	@Autowired
+	private ContenidoPedidoRepository repositoryContenidoPedidos;
+	
 	Iterable<Producto> productos;
 	
 	
@@ -189,7 +195,52 @@ public class AdminController { //
 		return new ModelAndView("index").addObject("productos", productos);			
 	}
 
+	/*comprobar pedidos*/
+	
+	@RequestMapping("/visualizar_pedidos") //consulta los pedidos
+	public ModelAndView visualizar_pedidos() {
+				
+		if(usuario.isAdmin()){
+			
+			Iterable<Pedido> pedidos = repositoryPedidos.findAll();			
+			return new ModelAndView("gestion_pedidos").addObject("pedidos",pedidos);	
+		}				
+		
+		productos = repository.findAll(); // cada vez que se recargue carga		
+		return new ModelAndView("index").addObject("productos", productos);			
+	}
+	
+	
 
+	@RequestMapping("/preparar") //borrar un articulo
+	public ModelAndView preparar_pedido(@RequestParam String	elemento) {
+				
+		if(usuario.isAdmin()){				
+			Pedido pedido = repositoryPedidos.findOne((long)Integer.parseInt(elemento));
+			if(!pedido.isPreparado()){
+				pedido.setPreparado(true);
+				repositoryPedidos.save(pedido);
+			}			
+			Iterable<Pedido> pedidos = repositoryPedidos.findAll();			
+			
+			return new ModelAndView("gestion_pedidos").addObject("pedidos",pedidos);	
+		}				
+		
+		productos = repository.findAll(); // cada vez que se recargue carga		
+		return new ModelAndView("index").addObject("productos", productos);			
+	}
+	@RequestMapping("/examinar") //borrar un articulo
+	public ModelAndView examinar_pedido(@RequestParam String	elemento) {
+				
+		if(usuario.isAdmin()){				
+			Iterable<ContenidoPedido> con_pedidos = repositoryContenidoPedidos.findByIdPedido((long)Integer.parseInt(elemento));
+			
+			return new ModelAndView("gestion_examinar_pedido").addObject("pedidos",con_pedidos);	
+		}				
+		
+		productos = repository.findAll(); // cada vez que se recargue carga		
+		return new ModelAndView("index").addObject("productos", productos);			
+	}
 	
 
 }

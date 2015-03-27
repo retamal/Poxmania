@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"></link>
+    <title>Poxmania</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href='css/custom.css'></link>
+</head>
+
+<body>
+
+	<div id="cabeceraAdmin">
+		<div id="parte1">
+			<a href="/acceso" style="text-decoration: none">
+				<div id="logoadmin"></div>
+			</a>
+			
+			<div id="botonesusuario">
+				<a class="btn  botonuser" href="desconectar" role="button">
+					<div class="textoboton">
+						<span class="glyphicon glyphicon-user iconoboton"></span>Salir
+					</div>
+				</a>
+			</div>
+		</div> <!--parte1-->		
+	</div>
+       
+
+        
+    
+    <div id="contenedoradmin">   	
+    	<table id="tablaadmin_pedidos">
+    		<tr class="filaproducto" >
+    			<td class="columnacat" style="border-left:1px solid black">PEDIDO ID:</td>
+    			<td class="columnacat" th:text="${pedidos.get(0).idPedido}">ID</td>
+    		</tr>
+    		<tr class="filaproducto" th:each="pedido:${pedidos}">
+    			<td class="columnaid" th:text="${pedido.nombreArticulo}">nombre</td>    			
+    			<td class="columnacat" th:text="${pedido.cantidadArticulo}+' uds.'">Can</td>
+    		</tr>
+    		<tr>
+    			<td class="columnaedicion2"  style="border-left:1px solid black" ><a th:href="@{'/visualizar_pedidos'}" style="text-decoration:none;color:white">VOLVER</a></td>
+    		</tr>
+    	</table>	    
+       
+    </div>
+   
+
+
+
+
+
+
+</body>
+
+</html>
