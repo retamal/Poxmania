@@ -109,34 +109,12 @@ public class Cesta {
 		
 	}
 	
-	
-	public void disminuirProducto(long idAbuscar,int cantidad){
-		/*para tener una sola operacion, si la cantidad es -1 elimina el producto, en otro caso resta la cantidad*/
-		
-		Producto prodcompr= repository.findOne(idAbuscar);
-		if(cantidad==-1){
-			for (Articulo articulo:cestaCompra){			
-				if (articulo.getId()==idAbuscar){ 
-					precio-=articulo.getPrecio()*articulo.getCantidad();
-					num_productos-=articulo.getCantidad();
-					cestaCompra.remove(articulo);	
-					
-				}			
-			}
-		}else{
-			for (Articulo articulo:cestaCompra){			
-				if ((articulo.getId()==idAbuscar)&&(articulo.getCantidad()-cantidad<=prodcompr.getCantidad())){ 
-					articulo.setCantidad(articulo.getCantidad()-cantidad);
-					precio-=articulo.getPrecio()*cantidad;
-					num_productos-=cantidad;					
-				}else if((articulo.getId()==idAbuscar)&&(articulo.getCantidad()-cantidad>prodcompr.getCantidad())){
-					//si mientras compra, alguien compra muchas unidades se actualiza con la mayor cantidad posible
-					articulo.setCantidad(prodcompr.getCantidad());	
-					precio-=articulo.getPrecio()*cantidad;
-					num_productos-=cantidad;
-				}				
-			}
-		}		
+	public void vaciarCesta(){
+		cestaCompra.clear();
+		precio=0;
+		num_productos=0;
 	}
+	
+	
 }
 
