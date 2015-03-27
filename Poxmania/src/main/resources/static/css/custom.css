@@ -770,9 +770,10 @@ table {
     display: block;
     width: 150px;
     text-decoration: underline;
-    font-size: 12em;
+    font-size: 20em;
     margin-top: 70px;
     text-align: center;
+    color: black;
 }
 
 .cesta_menos{
@@ -862,4 +863,51 @@ table {
     color: white;
     font-weight: bold;
     text-shadow: 1px 1px 1px black;
+}
+
+/**** FORMULARIO PEDIDO *******/
+
+#mensaje_alerta_cesta{
+    width:500px;
+    padding: 10px;
+    background-color:rgba(232, 232, 232, 1);
+    color:white;
+    border:1px solid #C8C8C8;
+    border-radius:5px;
+    text-align: center;
+    font-size: 2em;
+    margin: auto;
+    display: block;
+    text-shadow:1px 1px 8px black;
+    margin-bottom:20px;
+    
+}
+
+#tabla_resumen_pedido{
+    border:1px solid rgb(132, 132, 132);
+    display: block;
+    margin: auto;
+    width: 500px;
+    text-align: right;
+    margin-bottom: 20px;
+
+}
+
+.resumen_cesta_celda{
+    border-bottom: 1px solid black;
+}
+.resumen_cesta_celda_total{
+    background-color: #a2a2a2;
+    text-shadow:1px 1px 1px white;
+}
+
+#formulariopedido{    
+      margin: auto;
+      display: block;
+      border:1px solid rgb(132, 132, 132);
+      font-size: 12em;
+      text-align: center;
+      width: 500;
+      padding: 10px;
+
 }

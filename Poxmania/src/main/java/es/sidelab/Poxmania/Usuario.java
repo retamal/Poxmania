@@ -33,5 +33,9 @@ public class Usuario {
 		this.admin = admin;
 	}
 	
+	public void vaciarCesta(){
+		this.miCesta.vaciarCesta();
+	}
+	
 	
 }
