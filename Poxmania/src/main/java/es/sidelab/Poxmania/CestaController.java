@@ -42,9 +42,8 @@ public class CestaController { //
 		
 		usuario.getMiCesta().anadirProducto(prodaux);;
 		
-		
-		
-		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta());			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta()).addObject("obj_en_carro",productos_en_carro);			
 	}
 	
 	@RequestMapping("/eliminar_producto_cesta") //borrar un articulo
@@ -57,8 +56,8 @@ public class CestaController { //
 		usuario.getMiCesta().eliminarProducto(prodaux);
 		
 		
-		
-		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta());			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta()).addObject("obj_en_carro",productos_en_carro);				
 	}
 	
 	@RequestMapping("/disminuir_producto_cesta") //borrar un articulo
@@ -69,15 +68,16 @@ public class CestaController { //
 		Producto prodaux = repository.findOne(Long.parseLong(id));
 		
 		usuario.getMiCesta().disminuirProducto(prodaux);		
-		
-		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta());			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta()).addObject("obj_en_carro",productos_en_carro);				
 	}
 	
 	@RequestMapping("/micesta") //borrar un articulo
 	public ModelAndView micesta() {
 				
 		
-		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta());			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta()).addObject("obj_en_carro",productos_en_carro);				
 	}
 	
 	@RequestMapping("/hacer_pedido") //borrar un articulo
@@ -94,7 +94,8 @@ public class CestaController { //
 		usuario.vaciarCesta(); //borra la cesta del usuario		
 		
 		
-		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta());			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("visualizar_cesta").addObject("cesta", usuario.getMiCesta()).addObject("obj_en_carro",productos_en_carro);			
 	}
 	
 	@RequestMapping("/formulario_pedido") //borrar un articulo
@@ -115,9 +116,12 @@ public class CestaController { //
 		
 		if(usuario.getMiCesta().getNum_productos()==0){
 			productos = repository.findAll(); // cada vez que se recargue carga		
-			return new ModelAndView("index").addObject("productos", productos);			
+			int productos_en_carro = usuario.getMiCesta().getNum_productos();
+			return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);
 		}else{
-			return new ModelAndView("formulario_pedido").addObject("cesta", usuario.getMiCesta()).addObject("cambios",cambios_en_cesta);		
+			
+			int productos_en_carro = usuario.getMiCesta().getNum_productos();
+			return new ModelAndView("formulario_pedido").addObject("cesta", usuario.getMiCesta()).addObject("cambios",cambios_en_cesta).addObject("obj_en_carro",productos_en_carro);			
 		}
 		
 		

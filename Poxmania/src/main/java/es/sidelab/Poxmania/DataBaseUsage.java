@@ -42,10 +42,12 @@ public class DataBaseUsage implements CommandLineRunner {
 	public ModelAndView porprecio(@RequestParam String min,@RequestParam String max) {
 		if(!min.isEmpty()&&!max.isEmpty()){
 			productos = repository.findByPrecioBetween(Float.parseFloat(min), Float.parseFloat(max));										
-			return new ModelAndView("index").addObject("productos", productos);
+			int productos_en_carro = usuario.getMiCesta().getNum_productos();
+			return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);
 		}else{
 			productos = repository.findAll();										
-			return new ModelAndView("index").addObject("productos", productos);
+			int productos_en_carro = usuario.getMiCesta().getNum_productos();
+			return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);
 		}
 	}
 	
@@ -53,10 +55,12 @@ public class DataBaseUsage implements CommandLineRunner {
 	public ModelAndView pornombre(@RequestParam String textoabuscar) {
 		if(!textoabuscar.isEmpty()){
 			productos = repository.findByNombreContaining(textoabuscar);										
-			return new ModelAndView("index").addObject("productos", productos);
+			int productos_en_carro = usuario.getMiCesta().getNum_productos();
+			return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);
 		}else{
 			productos = repository.findAll();										
-			return new ModelAndView("index").addObject("productos", productos);
+			int productos_en_carro = usuario.getMiCesta().getNum_productos();
+			return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);
 		}
 	}
 	
@@ -67,7 +71,8 @@ public class DataBaseUsage implements CommandLineRunner {
 
 		productos = repository.findByCategoria(cat); // en el boton pondra
 														// cat=videojuegos etc
-		return new ModelAndView("index").addObject("productos", productos);
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);
 
 	}
 
@@ -76,7 +81,9 @@ public class DataBaseUsage implements CommandLineRunner {
 		productos = repository.findAll(); // cada vez que se recargue carga
 											// todos los productos de la BD para
 											// que siempre este actualizado
-		return new ModelAndView("index").addObject("productos", productos);
+		
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);
 	}
 
 }

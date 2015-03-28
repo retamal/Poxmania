@@ -39,7 +39,8 @@ public class ProductoController { //
 		}				
 		
 		productos = repository.findAll(); // cada vez que se recargue carga		
-		return new ModelAndView("index").addObject("productos", productos);			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);		
 	}
 
 	@RequestMapping("/acceso")
@@ -47,20 +48,26 @@ public class ProductoController { //
 		if (usuario.isAdmin()){
 			return new ModelAndView("pantallaadministracion");
 		}else{
-			return new ModelAndView("acceso");
+			
+			int productos_en_carro = usuario.getMiCesta().getNum_productos();			
+			return new ModelAndView("acceso").addObject("obj_en_carro",productos_en_carro);
 		}
 	}
 	@RequestMapping("/desconectar")
 	public ModelAndView desconectar() {//si esta puesto de admin 
 		usuario.setAdmin(false);
 		productos = repository.findAll(); // cada vez que se recargue carga		
-		return new ModelAndView("index").addObject("productos", productos);		
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);	
 	}
 	
 	@RequestMapping("/visualizar") 
-	public ModelAndView visualizar_producto(@RequestParam String elemento) {				
+	public ModelAndView visualizar_producto(@RequestParam String elemento) {
+		
+		
 		Producto productoaux = repository.findOne((long)Integer.parseInt(elemento));
-		return new ModelAndView("visualizar_producto").addObject("producto",productoaux);	
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("visualizar_producto").addObject("producto",productoaux).addObject("obj_en_carro",productos_en_carro);	
 	}
 	
 	

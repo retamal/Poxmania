@@ -45,7 +45,8 @@ public class AdminController { //
 		}				
 		
 		productos = repository.findAll(); // cada vez que se recargue carga		
-		return new ModelAndView("index").addObject("productos", productos);			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);	
 	}
 	
 	@RequestMapping("/dardealta") //dar de alta un nuevo articulo
@@ -56,7 +57,8 @@ public class AdminController { //
 		}				
 		
 		productos = repository.findAll(); // cada vez que se recargue carga		
-		return new ModelAndView("index").addObject("productos", productos);			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);	
 	}
 	
 	@RequestMapping(value="/comprobaralta" , method = RequestMethod.POST) //dar de alta un nuevo articulo
@@ -107,7 +109,8 @@ public class AdminController { //
 		}				
 		
 		productos = repository.findAll(); // cada vez que se recargue carga		
-		return new ModelAndView("index").addObject("productos", productos);			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);		
 	}
 	
 	@RequestMapping("/borrar") //borrar un articulo
@@ -120,7 +123,8 @@ public class AdminController { //
 		}				
 		
 		productos = repository.findAll(); // cada vez que se recargue carga		
-		return new ModelAndView("index").addObject("productos", productos);			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);			
 	}
 	
 	@RequestMapping("/editar") //editar un articulo
@@ -132,7 +136,8 @@ public class AdminController { //
 		}				
 		
 		productos = repository.findAll(); // cada vez que se recargue carga		
-		return new ModelAndView("index").addObject("productos", productos);			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);		
 	}
 	
 	@RequestMapping(value="/comprobareditar" , method = RequestMethod.POST) //editar un articulo
@@ -192,7 +197,8 @@ public class AdminController { //
 		}				
 		
 		productos = repository.findAll(); // cada vez que se recargue carga		
-		return new ModelAndView("index").addObject("productos", productos);			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);		
 	}
 
 	/*comprobar pedidos*/
@@ -207,7 +213,8 @@ public class AdminController { //
 		}				
 		
 		productos = repository.findAll(); // cada vez que se recargue carga		
-		return new ModelAndView("index").addObject("productos", productos);			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);	
 	}
 	
 	
@@ -239,7 +246,8 @@ public class AdminController { //
 		}				
 		
 		productos = repository.findAll(); // cada vez que se recargue carga		
-		return new ModelAndView("index").addObject("productos", productos);			
+		int productos_en_carro = usuario.getMiCesta().getNum_productos();
+		return new ModelAndView("index").addObject("productos", productos).addObject("obj_en_carro",productos_en_carro);		
 	}
 	
 
